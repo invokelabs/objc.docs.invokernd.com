@@ -4,7 +4,9 @@ title: Invoke Labs Objective-C Style Guide
 base_url: "/"
 ---
 
-This style guide outlines the coding conventions for Objective-C at Invoke Labs. This guide is forked from the [NYTimes Objective-C Style Guide](https://github.com/NYTimes/objetive-c-style-guide/).
+This style guide outlines the coding conventions for Objective-C at Invoke Labs. 
+
+This guide is forked from the [NYTimes Objective-C Style Guide](https://github.com/NYTimes/objetive-c-style-guide/).
 
 As this document is always evolving, we welcome your feedback via [pull requests](https://bitbucket.org/invokelabs/invoke-objective-c-style-guide/pull-requests), and [emails](mailto:dev.ios@invokelabs.com).
 
