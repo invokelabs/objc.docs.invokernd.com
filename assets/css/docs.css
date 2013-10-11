@@ -34,6 +34,46 @@ p.right-corner {
   float: right;
 }
 
+#footer {
+  display: none;
+  position: fixed;
+  left: 0px;
+  right: 0px;
+  bottom: -100px;
+  width: 100%;
+  color: #fff;
+}
+
+#footer #innerWrap { 
+  margin: 40px 0 0 0;
+}
+
+#top-footer {
+  background: #000;
+  height: 240px;
+  padding-top: 15px; 
+}
+
+#bottom-footer {
+  background: #706258;
+  height: 50px;
+  padding-top: 15px;
+}
+
+#tagline-footer {
+  margin-bottom: 40px;
+  text-align: center; 
+}
+
+#table-footer {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#table-item-footer {
+  padding-right: 220px;    
+}
+ 
 /*
  * Scaffolding
  *
@@ -133,6 +173,7 @@ body {
   color: #777;
   text-align: center;
   border-top: 1px solid #e5e5e5;
+  height: 240px;
 }
 .footer-links {
   margin: 10px 0;
