@@ -1,17 +1,19 @@
 <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
   <div class="container">
     <div class="navbar-header">
-      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
+      <a href="#menu">
+        <button class="navbar-toggle" type="button" data-toggle="collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+      </a>      
       <a href="{{ page.base_url }}" class="navbar-brand">Invoke Labs</a>
     </div>
     <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
       <ul class="nav navbar-nav">
-        <li class="dropdown {% if page.slug == "style_guide" %}active{% endif %}">
+        <li id="invert-color-nav" class="dropdown {% if page.slug == "style_guide" %}active{% endif %}">
           <a href="{{ page.base_url }}content/style_guide" class="dropdown-toggle" data-toggle="dropdown">Style Guide</a>
             <ul class="dropdown-menu">
               <li><a href="{{ page.base_url }}content/style_guide">Overview</a></li>
@@ -28,7 +30,7 @@
             </ul>
         </li>
 
-        <li class="dropdown {% if page.slug == "coding_practices" %}active{% endif %}">
+        <li id="invert-color-nav" class="dropdown {% if page.slug == "coding_practices" %}active{% endif %}">
           <a href="{{ page.base_url }}content/coding_practices" class="dropdown-toggle" data-toggle="dropdown">Coding Practices</a>
             <ul class="dropdown-menu">
               <li><a href="{{ page.base_url }}content/coding_practices">Overview</a></li>              
@@ -43,11 +45,11 @@
             </ul>
         </li>
 
-        <li{% if page.slug == "documentation" %} class="active"{% endif %}>
+        <li id="invert-color-nav" {% if page.slug == "documentation" %} class="active"{% endif %}>
           <a href="{{ page.base_url }}content/documentation">Documentation</a>
         </li>
 
-        <li{% if page.slug == "xcode" %} class="active"{% endif %}>
+        <li id="invert-color-nav" {% if page.slug == "xcode" %} class="active"{% endif %}>
           <a href="{{ page.base_url }}content/xcode">Documentation</a>
         </li>
 
