@@ -6,3 +6,7 @@ rvm:
   - 1.9.3
 script: bundle exec jekyll build
 install: bundle install
+after_success:
+	- cp -rf _site ../_site
+	- git checkout -f gh-pages
+	- rsync -av --progress --itemize-changes ../site .
