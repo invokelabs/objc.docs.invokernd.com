@@ -1,4 +1,6 @@
 language: ruby
+env:
+  secure: "YpTlyyXd4hN61yS8+DcnWvS2gu0jdB7KVmAq+cxpPdB+Wact1qwHJ0JEoa5f/W64HuSsTbTyv5+EjS7MkL3RRtzSx8jMapMeyhuZKiadjJ1gxbq/PGmfGfr2QTRlLYAMb6R7uNthzHkf0Gi5nsP87mX0b5LBnQg/+vct7mTVhfQ="
 branches:
   only:
     - master
@@ -9,12 +11,12 @@ install: bundle install
 after_success:
   - cp -rf _site ../_site
   - cd ..
-  - git clone --quiet --branch=gh-pages https://8c3762ca3a528dd9181d746d564482dac74758a9@github.com/invokelabs/objc.docs.invokernd.com.git  gh-pages > /dev/null
+  - git clone --quiet --branch=gh-pages https://$GIT_TOKEN@github.com/invokelabs/objc.docs.invokernd.com.git  gh-pages > /dev/null
   - cd gh-pages
   - rsync -av --progress --itemize-changes ../_site/ .
   - git config user.email "github@mechaloid.com"
   - git config user.name "Shih Oon Liong"
   - git add *
   - git add .*
-  - git commit -am "They always say time changes things, but you actually have to change them yourself"
+  - git commit -am "Committed by Travis-CI build number: $TRAVIS_JOB_ID"
   - git push origin gh-pages
