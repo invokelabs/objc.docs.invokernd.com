@@ -18,5 +18,5 @@ after_success:
   - git config user.name "Shih Oon Liong"
   - git add *
   - git add .*
-  - git commit -a -m "Committed by Travis-CI build number: ${TRAVIS_JOB_ID}"
+  - git commit -a -m "Committed by Travis-CI build number TRAVIS_JOB_ID"
   - git push origin gh-pages
