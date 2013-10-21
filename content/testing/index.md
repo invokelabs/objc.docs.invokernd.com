@@ -21,9 +21,9 @@ Pretty wide open as long as you can properly integrate with the Appium/Selenium 
 
 1. **Cucumber**: a BDD based set up that uses Gherkin to generate scenario files, which you then use ruby to write tests for, which you then code in your Xcode project. Only works with Ruby, Java, .Net out of the box. . . you can use with other languages like Obj-C but that involves 4th party libraries like [this one](https://github.com/OCCukes/OCCukes) which I was never able to get going. Ruby is pretty straight forward though.
 
-2. **PHPUnit**: I think this what the QA department is currently using for web automation testing so it makes sense to only have one testing langauge (thats the whole point of appium after all). With that in mind, they can write scripts for moblie (both android and ios) in exactlly the same fashion that they write the scripts for web testing and use all the same commands, sauce communications, etc for everything. Of course, they could also implement all previous PHPUnit web tests in Cucumber with Ruby, but considering nothing has really been done on the mobile side yet, probably makes sense to go with the other.
+2. **PHPUnit**: I think this what the QA department is currently using for web automation testing so it makes sense to only have one testing language (thats the whole point of appium after all). With that in mind, they can write scripts for mobile (both android and ios) in exactly the same fashion that they write the scripts for web testing and use all the same commands, sauce communications, etc for everything. Of course, they could also implement all previous PHPUnit web tests in Cucumber with Ruby, but considering nothing has really been done on the mobile side yet, probably makes sense to go with the other.
 
-3. **etc. . .**: this list could go on about J-Unit and other testing frameworks but not too much will be gained that isnt covered by the previous two. I think the testing framework choice is really just based on what the QAs/Devs are comfortable with.
+3. **etc. . .**: this list could go on about J-Unit and other testing frameworks but not too much will be gained that isn't covered by the previous two. I think the testing framework choice is really just based on what the QAs/Devs are comfortable with.
 
 
 ## Step 1: Creating a build to Test 
@@ -44,13 +44,13 @@ Before you can start testing you need a valid project build that you want to run
 
 ## Step 2: Uploading your build to SauceLabs
 
-You will need a valid SauceLabs account for this. Invoke Labs should have one in which cause you should be using that `ClientID` and `ClientSecret`. For the remiander of these instructions I will assume your `ClientID` is `InvokeLabs`, your `ClientSecret` is `AAAA-AAAA-AAAA-AAAA`, and your app is called `YOURAPP.app`
+You will need a valid SauceLabs account for this. Invoke Labs should have one in which cause you should be using that `ClientID` and `ClientSecret`. For the remainder of these instructions I will assume your `ClientID` is `InvokeLabs`, your `ClientSecret` is `AAAA-AAAA-AAAA-AAAA`, and your app is called `YOURAPP.app`
 
 1. Locate `.app.zip` build of you app from Setp 1 that you want to run tests against. From the command line modify and run the following: `curl -u InvokeLabs:AAAA-AAAA-AAAA-AAAA -X POST "http://saucelabs.com/rest/v1/storage/InvokeLabs/YOUR-APP.app.zip?overwrite=true" -H "Content-Type: application/octet-stream" --data-binary @/Users/wherever/you/saved/the/file/probably/in/build/Release-iphonesimulator/YOURAPP.app.zip`
 
 2. You should get a JSON response in the command line to confirm that they have received the file and that it has content, etc. 
 
-**note:** This is temporary storage and files are removed after 24hours. Also note, that the `@` is crucial, if drop it, you do not recieve an error but the actual file does not make its way to SauceLabs and you will be unhappy with yourself.
+**note:** This is temporary storage and files are removed after 24 hours. Also note, that the `@` is crucial, if drop it, you do not receive an error but the actual file does not make its way to SauceLabs and you will be unhappy with yourself.
 
 ## Step 3: Creating a Test with the framework of your choice for Appium
 
@@ -73,7 +73,7 @@ gem "rspec-expectations"`
 
 4. Create an additional folder titled `features` and in that folder, a file titled `YOURAPP.feature`
 
-5. Populate the contents of your feature file with Gherkin syntax explaining the usage you expect of your app and its particular features. You will eventually parse these gherkin statements with regular expressions so keep that in mind to ensure that you can easily build in a variety of text entries or button pushes or whatever your app happens to do. To give you an idea of syntax and approach, below is a sample chunk of Gherkin for an App built on the `Master table view prototype` that is intend to have a user add a new detail page, enter data on that page, save and have the new detail page appear in the master tableview:
+5. Populate the contents of your feature file with Gherkin syntax explaining the usage you expect of your app and its particular features. You will eventually parse these gherkin statements with regular expressions so keep that in mind to ensure that you can easily build in a variety of text entries or button pushes or whatever your app happens to do. To give you an idea of syntax and approach, below is a sample chunk of Gherkin for an App built on the `Master table view prototypee` that is intend to have a user add a new detail page, enter data on that page, save and have the new detail page appear in the master tableview:
 
 {% highlight Gherkin %}
 Feature: Notes
@@ -92,7 +92,7 @@ The Feature block is largely ignored, but you will link tests up to each scenari
 
 ####b. Creating the Actual Tests
 
-6. Now that we have a Gherkin blueprint set up, we can write the actual tests that implement it using Ruby/RSpec and the Appium - JSON wire Protocol. To do this we'll create a sub folder in `features` titled `StepDefinitions` and generate a `YOURAPPTEST.rb` file inside that folder. For this example, the contents of this file is written in Ruby and will map to what you outlined in your `.feature` file. Using the `.feature` file outlined above the corresponding code for a hypothetical  `Master table view prototype` app would look something like this:
+6. Now that we have a Gherkin blueprint set up, we can write the actual tests that implement it using Ruby/RSpec and the Appium - JSON wire Protocol. To do this we'll create a sub folder in `features` titled `StepDefinitions` and generate a `YOURAPPTEST.rb` file inside that folder. For this example, the contents of this file is written in Ruby and will map to what you outlined in your `.feature` file. Using the `.feature` file outlined above the corresponding code for a hypothetical  `Master table view prototypee` app would look something like this:
 
 {% highlight ruby %}
 Given(/^I have App running with appium$/) do  

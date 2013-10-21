@@ -168,11 +168,11 @@
 </li>
 
 <li>
-<p><strong>PHPUnit</strong>: I think this what the QA department is currently using for web automation testing so it makes sense to only have one testing langauge (thats the whole point of appium after all). With that in mind, they can write scripts for moblie (both android and ios) in exactlly the same fashion that they write the scripts for web testing and use all the same commands, sauce communications, etc for everything. Of course, they could also implement all previous PHPUnit web tests in Cucumber with Ruby, but considering nothing has really been done on the mobile side yet, probably makes sense to go with the other.</p>
+<p><strong>PHPUnit</strong>: I think this what the QA department is currently using for web automation testing so it makes sense to only have one testing language (thats the whole point of appium after all). With that in mind, they can write scripts for mobile (both android and ios) in exactly the same fashion that they write the scripts for web testing and use all the same commands, sauce communications, etc for everything. Of course, they could also implement all previous PHPUnit web tests in Cucumber with Ruby, but considering nothing has really been done on the mobile side yet, probably makes sense to go with the other.</p>
 </li>
 
 <li>
-<p><strong>etc</strong>: this list could go on about J-Unit and other testing frameworks but not too much will be gained that isnt covered by the previous two. I think the testing framework choice is really just based on what the QAs/Devs are comfortable with.</p>
+<p><strong>etc</strong>: this list could go on about J-Unit and other testing frameworks but not too much will be gained that isn’t covered by the previous two. I think the testing framework choice is really just based on what the QAs/Devs are comfortable with.</p>
 </li>
 </ol>
 
@@ -206,7 +206,7 @@
 
 <h2 id="step_2_uploading_your_build_to_saucelabs">Step 2: Uploading your build to SauceLabs</h2>
 
-<p>You will need a valid SauceLabs account for this. Invoke Labs should have one in which cause you should be using that <code>ClientID</code> and <code>ClientSecret</code>. For the remiander of these instructions I will assume your <code>ClientID</code> is <code>InvokeLabs</code>, your <code>ClientSecret</code> is <code>AAAA-AAAA-AAAA-AAAA</code>, and your app is called <code>YOURAPP.app</code></p>
+<p>You will need a valid SauceLabs account for this. Invoke Labs should have one in which cause you should be using that <code>ClientID</code> and <code>ClientSecret</code>. For the remainder of these instructions I will assume your <code>ClientID</code> is <code>InvokeLabs</code>, your <code>ClientSecret</code> is <code>AAAA-AAAA-AAAA-AAAA</code>, and your app is called <code>YOURAPP.app</code></p>
 
 <ol>
 <li>
@@ -218,7 +218,7 @@
 </li>
 </ol>
 
-<p><strong>note:</strong> This is temporary storage and files are removed after 24hours. Also note, that the <code>@</code> is crucial, if drop it, you do not recieve an error but the actual file does not make its way to SauceLabs and you will be unhappy with yourself.</p>
+<p><strong>note:</strong> This is temporary storage and files are removed after 24 hours. Also note, that the <code>@</code> is crucial, if drop it, you do not receive an error but the actual file does not make its way to SauceLabs and you will be unhappy with yourself.</p>
 
 <h2 id="step_3_creating_a_test_with_the_framework_of_your_choice_for_appium">Step 3: Creating a Test with the framework of your choice for Appium</h2>
 
@@ -251,7 +251,7 @@ gem &quot;rspec-expectations&quot;</code></p>
 </li>
 
 <li>
-<p>Populate the contents of your feature file with Gherkin syntax explaining the usage you expect of your app and its particular features. You will eventually parse these gherkin statements with regular expressions so keep that in mind to ensure that you can easily build in a variety of text entries or button pushes or whatever your app happens to do. To give you an idea of syntax and approach, below is a sample chunk of Gherkin for an App built on the <code>Master table view prototype</code> that is intend to have a user add a new detail page, enter data on that page, save and have the new detail page appear in the master tableview:</p>
+<p>Populate the contents of your feature file with Gherkin syntax explaining the usage you expect of your app and its particular features. You will eventually parse these gherkin statements with regular expressions so keep that in mind to ensure that you can easily build in a variety of text entries or button pushes or whatever your app happens to do. To give you an idea of syntax and approach, below is a sample chunk of Gherkin for an App built on the <code>Master table view prototypee</code> that is intend to have a user add a new detail page, enter data on that page, save and have the new detail page appear in the master tableview:</p>
 </li>
 </ol>
 <div class='highlight'><pre><code class='Gherkin'><span class='k'>Feature:</span><span class='nf'> Notes</span>
@@ -270,7 +270,7 @@ gem &quot;rspec-expectations&quot;</code></p>
 <h4 id="b_creating_the_actual_tests">b. Creating the Actual Tests</h4>
 
 <ol>
-<li>Now that we have a Gherkin blueprint set up, we can write the actual tests that implement it using Ruby/RSpec and the Appium - JSON wire Protocol. To do this we’ll create a sub folder in <code>features</code> titled <code>StepDefinitions</code> and generate a <code>YOURAPPTEST.rb</code> file inside that folder. For this example, the contents of this file is written in Ruby and will map to what you outlined in your <code>.feature</code> file. Using the <code>.feature</code> file outlined above the corresponding code for a hypothetical <code>Master table view prototype</code> app would look something like this:</li>
+<li>Now that we have a Gherkin blueprint set up, we can write the actual tests that implement it using Ruby/RSpec and the Appium - JSON wire Protocol. To do this we’ll create a sub folder in <code>features</code> titled <code>StepDefinitions</code> and generate a <code>YOURAPPTEST.rb</code> file inside that folder. For this example, the contents of this file is written in Ruby and will map to what you outlined in your <code>.feature</code> file. Using the <code>.feature</code> file outlined above the corresponding code for a hypothetical <code>Master table view prototypee</code> app would look something like this:</li>
 </ol>
 <div class='highlight'><pre><code class='ruby'><span class='no'>Given</span><span class='p'>(</span><span class='sr'>/^I have App running with appium$/</span><span class='p'>)</span> <span class='k'>do</span>  
 	<span class='c1'># Make sure you have started appium server  </span>
