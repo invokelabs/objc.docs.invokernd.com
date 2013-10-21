@@ -164,7 +164,7 @@
 
 <ol>
 <li>
-<p><strong>Cucumber</strong>: a BDD based set up that uses Gherkin to generate scenario files, which you then use ruby to write tests for, which you then code in your Xcode project. Seems like a tool that is useful beyond just the scope of post-facto automation testing as the focus seems to be on test design prior to coding, and then coding based on your tests. I think true usage of cucumber would involve a pretty big shakedown of the development cycle as you wouldn’t really write a line of code until you had your Gherkin feature file pretty well hashed out. I gather that you supplement/expand your feature file as you continue on with development but the main thrust is written off the design spec docs prior to coding. I’m not entirely familiar with the roles in terms of who would ultimately be responsible for creating the actual UITest files to accompany the feature files (If this is a QA thing, or a Dev thing) but that would require some thought as well I guess, as there is a lot of work to be done if a thorough test suite is what you are looking for.<br />*** notes: ***<br />a. Only works with Ruby, Java, .Net out of the box… you can use with other languages like Obj-C but that involves 4th party libraries like <a href="https://github.com/OCCukes/OCCukes">this one</a> which might be stretching things a little far. So in a way, who ever was writing the tests would need to be writing in Ruby.</p>
+<p><strong>Cucumber</strong>: a BDD based set up that uses Gherkin to generate scenario files, which you then use ruby to write tests for, which you then code in your Xcode project. Only works with Ruby, Java, .Net out of the box… you can use with other languages like Obj-C but that involves 4th party libraries like <a href="https://github.com/OCCukes/OCCukes">this one</a> which I was never able to get going. Ruby is pretty straight forward though.</p>
 </li>
 
 <li>
@@ -293,10 +293,10 @@ gem &quot;rspec-expectations&quot;</code></p>
 <span class='n'>note</span><span class='o'>.</span><span class='n'>attribute</span><span class='p'>(</span><span class='s2'>&quot;value&quot;</span><span class='p'>)</span><span class='o'>.</span><span class='n'>should</span> <span class='n'>match</span> <span class='n'>text</span>  
 <span class='k'>end</span>  
 </code></pre></div>
-<p>The code between the <code>when/then</code> and <code>@end</code> of each block can be thought of as replacing the javascript that you might have previously generated in Xcode Instruments. It is essentially what carries out the actions on your simulated app. As a note, if you are into it, you can code this by hand, but Appium provides a recorder feature which takes the manual effort out of this a bit. Ill outline how that works below but feel free to skip ahead to the next instruction if the recorder isn’t something you’re going to use. Also, the <code>sauce</code> variable that you see in most of the statements is declared in a later file, it houses the specifics of the webdriver but we’ll come to that.</p>
+<p>The code between the <code>when/then</code> and <code>@end</code> of each block can be thought of as replacing the javascript that you might have previously generated in Xcode Instruments. As a note, if you are into it, you can code this by hand, but Appium provides a recorder feature which takes the manual effort out of this a bit. Ill outline how that works below but feel free to skip ahead to the next instruction if the recorder isn’t something you’re going to use. Also, the <code>sauce</code> variable that you see in most of the statements is declared in a later file, it houses the specifics of the webdriver but we’ll come to that.</p>
 
 <blockquote>
-<h3 id="using_the_appium_recorder">Using the Appium Recorder</h3>
+<h3 id="using_the_appium_recorder_optional_instruction">Using the Appium Recorder (optional instruction)</h3>
 
 <p>Much like the Instruments recorder, Appium records your interactions so that you don’t actually have to code your tests. It is a good for generating example code or quick tests without bothering to learn the Appium JSON wire protocol.</p>
 
@@ -319,7 +319,7 @@ gem &quot;rspec-expectations&quot;</code></p>
 <li>
 <p>Finally, you need to create a file that ties together your app build that you uploaded to sauce, your tests that you’ve just written, and Appium. Do this by creating a new directory in <code>features</code> called <code>support</code> and a file in it called <code>environment.rb</code>. This file is going outline your <code>client ID</code> and <code>client Secret</code> for connecting to SauceLabs as well as a bunch of other stuff that Sauce specifies… basically all the important bits to make this work.</p>
 
-<p><strong>A moment to visualize things</strong>: We have done quite a bit in these last few instructions so it might be good to take a moment and soak up whats happening before we go on. At this point, if you were running your tests locally, you would set up this file to run on a version Appium that you downloaded (if you followed the Appium recorder instructions you will have what you need), and when you executed the <code>bundle exec cucumber features/YOUAPP.feature</code> command, your app would spin up in the simulator and all the tests you had written would carry out. On your command line, you would see the Gherkin text you had written gradually appearing and each line passing or failing based on whether or not your corresponding Ruby/Rspec tests passed. However, we are trying to get this running on sauce so we’ll skip this part, but when we do connect this to sauce, this is essentially what will be happening, expect its going to go down on their computer instead of yours.</p>
+<p><strong>A moment to visualize things</strong>: At this point, if you were running your tests locally, you would set up this file to run on a version Appium that you downloaded (if you followed the Appium recorder instructions you will have what you need), and when you executed, your app would spin up in the simulator and all the tests you had written would carry out. On your command line, you would see the Gherkin text you had written gradually appearing and each line passing or failing based on whether or not your corresponding Ruby/Rspec tests passed. However, we are trying to get this running on sauce so we’ll skip this part, but when we do connect this to sauce, this is essentially what will be happening, expect its going to go down on their computer instead of yours.</p>
 </li>
 
 <li>
@@ -395,7 +395,11 @@ gem &quot;rspec-expectations&quot;</code></p>
 </code></pre></div>
 <h2 id="step_4_tying_this_all_together">Step 4: Tying this all together</h2>
 
-<p>At this point all the pieces should be in place and you should be able to run a test that you have implemented on your app, as it exists on sauce labs.com… this is a very exciting time. For our specific example we would execute the following command to run our cucumber test from the project folder <code>bundle exec cucumber features/YOURAPP.feature</code>. If this was successful you would see your Gherkin statements populating the command line and turning green or red as their correlating code from the Ruby/RSpec file passed or failed. When its all done you get a report about the outcome… but no simulator was running and there was no Appium window (that was all running on some computer at sauce labs). To view the actual play by play video of your tests and see a whole bunch of other stats and stuff go to this <a href="https://saucelabs.com/tests">link</a>.</p>
+<p>At this point all the pieces should be in place and you should be able to run a test that you have implemented on your app, as it exists on sauce labs.com… this is a very exciting time. For our specific example we would execute the following command to run our cucumber test from the project folder</p>
+
+<p><code>bundle exec cucumber features/YOURAPP.feature</code></p>
+
+<p>If this was successful you would see your Gherkin statements populating the command line and turning green or red as their correlating code from the Ruby/RSpec file passed or failed. When its all done you get a report about the outcome… but no simulator was running and there was no Appium window (that was all running on some computer at sauce labs). To view the actual play by play video of your tests and see a whole bunch of other stats and stuff go to this <a href="https://saucelabs.com/tests">link</a>.</p>
 
         </div>
       </div>

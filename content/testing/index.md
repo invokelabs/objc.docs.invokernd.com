@@ -19,9 +19,7 @@ SauceLabs provides a service that allows users to carry out their testing in the
 
 Pretty wide open as long as you can properly integrate with the Appium/Selenium API protocols. Some popular choices seem to be:
 
-1. **Cucumber**: a BDD based set up that uses Gherkin to generate scenario files, which you then use ruby to write tests for, which you then code in your Xcode project. Seems like a tool that is useful beyond just the scope of post-facto automation testing as the focus seems to be on test design prior to coding, and then coding based on your tests. I think true usage of cucumber would involve a pretty big shakedown of the development cycle as you wouldn't really write a line of code until you had your Gherkin feature file pretty well hashed out. I gather that you supplement/expand your feature file as you continue on with development but the main thrust is written off the design spec docs prior to coding. I'm not entirely familiar with the roles in terms of who would ultimately be responsible for creating the actual UITest files to accompany the feature files (If this is a QA thing, or a Dev thing) but that would require some thought as well I guess, as there is a lot of work to be done if a thorough test suite is what you are looking for.  
-*** notes: ***  
-a. Only works with Ruby, Java, .Net out of the box. . . you can use with other languages like Obj-C but that involves 4th party libraries like [this one](https://github.com/OCCukes/OCCukes) which might be stretching things a little far. So in a way, who ever was writing the tests would need to be writing in Ruby.
+1. **Cucumber**: a BDD based set up that uses Gherkin to generate scenario files, which you then use ruby to write tests for, which you then code in your Xcode project. Only works with Ruby, Java, .Net out of the box. . . you can use with other languages like Obj-C but that involves 4th party libraries like [this one](https://github.com/OCCukes/OCCukes) which I was never able to get going. Ruby is pretty straight forward though.
 
 2. **PHPUnit**: I think this what the QA department is currently using for web automation testing so it makes sense to only have one testing langauge (thats the whole point of appium after all). With that in mind, they can write scripts for moblie (both android and ios) in exactlly the same fashion that they write the scripts for web testing and use all the same commands, sauce communications, etc for everything. Of course, they could also implement all previous PHPUnit web tests in Cucumber with Ruby, but considering nothing has really been done on the mobile side yet, probably makes sense to go with the other.
 
@@ -119,9 +117,9 @@ note.attribute("value").should match text
 end  
 {% endhighlight %}
 
-The code between the `when/then` and `@end` of each block can be thought of as replacing the javascript that you might have previously generated in Xcode Instruments. It is essentially what carries out the actions on your simulated app. As a note, if you are into it, you can code this by hand, but Appium provides a recorder feature which takes the manual effort out of this a bit. Ill outline how that works below but feel free to skip ahead to the next instruction if the recorder isn't something you're going to use. Also, the `sauce` variable that you see in most of the statements is declared in a later file, it houses the specifics of the webdriver but we'll come to that.
+The code between the `when/then` and `@end` of each block can be thought of as replacing the javascript that you might have previously generated in Xcode Instruments. As a note, if you are into it, you can code this by hand, but Appium provides a recorder feature which takes the manual effort out of this a bit. Ill outline how that works below but feel free to skip ahead to the next instruction if the recorder isn't something you're going to use. Also, the `sauce` variable that you see in most of the statements is declared in a later file, it houses the specifics of the webdriver but we'll come to that.
 
->### Using the Appium Recorder
+>### Using the Appium Recorder (optional instruction)
 >Much like the Instruments recorder, Appium records your interactions so that you don't actually have to code your tests. It is a good for generating example code or quick tests without bothering to learn the Appium JSON wire protocol.  
 >1. Download Appium [here](http://appium.io/) and install and run it.  
 >2. Select the `App Path` checkbox and locate a valid build of your app that you want to run automation tests against.  
@@ -133,7 +131,7 @@ The code between the `when/then` and `@end` of each block can be thought of as r
 
 7. Finally, you need to create a file that ties together your app build that you uploaded to sauce, your tests that you've just written, and Appium. Do this by creating a new directory in `features` called `support` and a file in it called `environment.rb`. This file is going outline your `client ID` and `client Secret` for connecting to SauceLabs as well as a bunch of other stuff that Sauce specifies. . . basically all the important bits to make this work. 
 
-	**A moment to visualize things**: We have done quite a bit in these last few instructions so it might be good to take a moment and soak up whats happening before we go on. At this point, if you were running your tests locally, you would set up this file to run on a version Appium that you downloaded (if you followed the Appium recorder instructions you will have what you need), and when you executed the `bundle exec cucumber features/YOUAPP.feature` command, your app would spin up in the simulator and all the tests you had written would carry out. On your command line, you would see the Gherkin text you had written gradually appearing and each line passing or failing based on whether or not your corresponding Ruby/Rspec tests passed. However, we are trying to get this running on sauce so we'll skip this part, but when we do connect this to sauce, this is essentially what will be happening, expect its going to go down on their computer instead of yours.
+	**A moment to visualize things**: At this point, if you were running your tests locally, you would set up this file to run on a version Appium that you downloaded (if you followed the Appium recorder instructions you will have what you need), and when you executed, your app would spin up in the simulator and all the tests you had written would carry out. On your command line, you would see the Gherkin text you had written gradually appearing and each line passing or failing based on whether or not your corresponding Ruby/Rspec tests passed. However, we are trying to get this running on sauce so we'll skip this part, but when we do connect this to sauce, this is essentially what will be happening, expect its going to go down on their computer instead of yours.
 
 8. In accordance with SauceLabs [setup](https://saucelabs.com/appium/tutorial/2#setting-up-tests) you will need to include all of the following in your `environment.rb` file:
 
@@ -212,7 +210,11 @@ After { @sauce.quit }
 
 ##Step 4: Tying this all together
 
-At this point all the pieces should be in place and you should be able to run a test that you have implemented on your app, as it exists on sauce labs.com. . .  this is a very exciting time. For our specific example we would execute the following command to run our cucumber test from the project folder `bundle exec cucumber features/YOURAPP.feature`. If this was successful you would see your Gherkin statements populating the command line and turning green or red as their correlating code from the Ruby/RSpec file passed or failed. When its all done you get a report about the outcome. . . but no simulator was running and there was no Appium window (that was all running on some computer at sauce labs). To view the actual play by play video of your tests and see a whole bunch of other stats and stuff go to this [link](https://saucelabs.com/tests).
+At this point all the pieces should be in place and you should be able to run a test that you have implemented on your app, as it exists on sauce labs.com. . .  this is a very exciting time. For our specific example we would execute the following command to run our cucumber test from the project folder 
+
+`bundle exec cucumber features/YOURAPP.feature`
+
+If this was successful you would see your Gherkin statements populating the command line and turning green or red as their correlating code from the Ruby/RSpec file passed or failed. When its all done you get a report about the outcome. . . but no simulator was running and there was no Appium window (that was all running on some computer at sauce labs). To view the actual play by play video of your tests and see a whole bunch of other stats and stuff go to this [link](https://saucelabs.com/tests).
 
 
 
