@@ -158,7 +158,7 @@ Blocks are a powerful language feature, but one that can quickly become difficul
 
 * Forward declare longer blocks
 * Avoid nesting blocks
-* Use the **__weak** compiler directive to avoid strongly referencing variables such as 'self'
+* Use the `__weak` compiler directive to avoid strongly referencing variables such as 'self'
 
 **For Example**
 
