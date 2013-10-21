@@ -120,7 +120,9 @@
         <li id="invert-color-nav" >
           <a href="/content/xcode">Xcode</a>
         </li>
-
+        <li id="invert-color-nav" >
+          <a href="/content/testing">Testing</a>
+        </li>
       </ul>
     </nav>
   </div>
@@ -145,61 +147,39 @@
           </div>
         </div> -->
         <div class="body-content col-md-12" role="main">
-          <ul id="markdown-toc">
-  <li><a href="#dot-notation-syntax">Dot-Notation Syntax</a></li>
-  <li><a href="#spacing">Spacing</a></li>
-  <li><a href="#conditionals">Conditionals</a>    <ul>
-      <li><a href="#ternary-operator">Ternary Operator</a></li>
-    </ul>
-  </li>
-  <li><a href="#error-handling">Error handling</a></li>
-  <li><a href="#methods">Methods</a></li>
-  <li><a href="#variables">Variables</a></li>
-  <li><a href="#naming">Naming</a>    <ul>
-      <li><a href="#underscores">Underscores</a></li>
-    </ul>
-  </li>
-  <li><a href="#image-naming">Image Naming</a></li>
-  <li><a href="#booleans">Booleans</a></li>
-  <li><a href="#singletons">Singletons</a></li>
-</ul>
-
-<h1 id="dot-notation-syntax">Dot-Notation Syntax</h1>
+          <div class="maruku_toc"><ul><li><a href="#dotnotation_syntax">Dot-Notation Syntax</a></li><li><a href="#spacing">Spacing</a></li><li><a href="#conditionals">Conditionals</a><ul><li><a href="#ternary_operator">Ternary Operator</a></li></ul></li><li><a href="#error_handling">Error handling</a></li><li><a href="#methods">Methods</a></li><li><a href="#variables">Variables</a></li><li><a href="#naming">Naming</a><ul><li><a href="#underscores">Underscores</a></li></ul></li><li><a href="#image_naming">Image Naming</a></li><li><a href="#booleans">Booleans</a></li><li><a href="#singletons">Singletons</a></li></ul></div>
+<h1 id="dotnotation_syntax">Dot-Notation Syntax</h1>
 
 <p>Dot-notation should <strong>always</strong> be used for accessing and mutating properties. Bracket notation is preferred in all other instances.</p>
 
 <p><strong>For example:</strong></p>
-
-<div class="highlight"><pre><code class="objective-c"><span class="n">view</span><span class="p">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="p">[</span><span class="n">UIColor</span> <span class="n">orangeColor</span><span class="p">];</span>
-<span class="p">[</span><span class="n">UIApplication</span> <span class="n">sharedApplication</span><span class="p">].</span><span class="n">delegate</span><span class="p">;</span>
+<div class='highlight'><pre><code class='objective-c'><span class='n'>view</span><span class='p'>.</span><span class='n'>backgroundColor</span> <span class='o'>=</span> <span class='p'>[</span><span class='n'>UIColor</span> <span class='n'>orangeColor</span><span class='p'>];</span>
+<span class='p'>[</span><span class='n'>UIApplication</span> <span class='n'>sharedApplication</span><span class='p'>].</span><span class='n'>delegate</span><span class='p'>;</span>
 </code></pre></div>
-
 <p><strong>Not:</strong></p>
-
-<div class="highlight"><pre><code class="objective-c"><span class="p">[</span><span class="n">view</span> <span class="n">setBackgroundColor</span><span class="o">:</span><span class="p">[</span><span class="n">UIColor</span> <span class="n">orangeColor</span><span class="p">]];</span>
-<span class="n">UIApplication</span><span class="p">.</span><span class="n">sharedApplication</span><span class="p">.</span><span class="n">delegate</span><span class="p">;</span>
+<div class='highlight'><pre><code class='objective-c'><span class='p'>[</span><span class='n'>view</span> <span class='n'>setBackgroundColor</span><span class='o'>:</span><span class='p'>[</span><span class='n'>UIColor</span> <span class='n'>orangeColor</span><span class='p'>]];</span>
+<span class='n'>UIApplication</span><span class='p'>.</span><span class='n'>sharedApplication</span><span class='p'>.</span><span class='n'>delegate</span><span class='p'>;</span>
 </code></pre></div>
-
 <h1 id="spacing">Spacing</h1>
 
 <ul>
-  <li>Indent using tabs, with a tab width of 4 spaces. Never indent with spaces. Be sure to set this preference in Xcode.</li>
-  <li>Method braces and other braces (<code>if</code>/<code>else</code>/<code>switch</code>/<code>while</code> etc.) always open on the same line as the statement but close on a new line.</li>
+<li>Indent using tabs, with a tab width of 4 spaces. Never indent with spaces. Be sure to set this preference in Xcode.</li>
+
+<li>Method braces and other braces (<code>if</code>/<code>else</code>/<code>switch</code>/<code>while</code> etc.) always open on the same line as the statement but close on a new line.</li>
 </ul>
 
 <p><strong>For example:</strong></p>
-
-<div class="highlight"><pre><code class="objective-c"><span class="k">if</span> <span class="p">(</span><span class="n">user</span><span class="p">.</span><span class="n">isHappy</span><span class="p">)</span> <span class="p">{</span>
-  <span class="c1">//Do something</span>
-<span class="p">}</span>
-<span class="k">else</span> <span class="p">{</span>
-  <span class="c1">//Do something else</span>
-<span class="p">}</span>
+<div class='highlight'><pre><code class='objective-c'><span class='k'>if</span> <span class='p'>(</span><span class='n'>user</span><span class='p'>.</span><span class='n'>isHappy</span><span class='p'>)</span> <span class='p'>{</span>
+  <span class='c1'>//Do something</span>
+<span class='p'>}</span>
+<span class='k'>else</span> <span class='p'>{</span>
+  <span class='c1'>//Do something else</span>
+<span class='p'>}</span>
 </code></pre></div>
-
 <ul>
-  <li>There should be exactly one blank line between methods to aid in visual clarity and organization. Whitespace within methods should separate functionality, but often there should probably be new methods.</li>
-  <li><code>@synthesize</code> and <code>@dynamic</code> should each be declared on new lines in the implementation.</li>
+<li>There should be exactly one blank line between methods to aid in visual clarity and organization. Whitespace within methods should separate functionality, but often there should probably be new methods.</li>
+
+<li><code>@synthesize</code> and <code>@dynamic</code> should each be declared on new lines in the implementation.</li>
 </ul>
 
 <h1 id="conditionals">Conditionals</h1>
@@ -207,58 +187,44 @@
 <p>Conditional bodies should always use braces even when a conditional body could be written without braces (e.g., it is one line only) to prevent <a href="https://github.com/NYTimes/objective-c-style-guide/issues/26#issuecomment-22074256">errors</a>. These errors include adding a second line and expecting it to be part of the if-statement. Another, <a href="http://programmers.stackexchange.com/a/16530">even more dangerous defect</a> may happen where the line “inside” the if-statement is commented out, and the next line unwittingly becomes part of the if-statement. In addition, this style is more consistent with all other conditionals, and therefore more easily scannable.</p>
 
 <p><strong>For example:</strong></p>
-
-<div class="highlight"><pre><code class="objective-c"><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="n">success</span><span class="p">;</span>
-<span class="p">}</span>
+<div class='highlight'><pre><code class='objective-c'><span class='k'>if</span> <span class='p'>(</span><span class='o'>!</span><span class='n'>error</span><span class='p'>)</span> <span class='p'>{</span>
+    <span class='k'>return</span> <span class='n'>success</span><span class='p'>;</span>
+<span class='p'>}</span>
 </code></pre></div>
-
 <p><strong>Not:</strong></p>
-
-<div class="highlight"><pre><code class="objective-c"><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">error</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">success</span><span class="p">;</span>
+<div class='highlight'><pre><code class='objective-c'><span class='k'>if</span> <span class='p'>(</span><span class='o'>!</span><span class='n'>error</span><span class='p'>)</span>
+    <span class='k'>return</span> <span class='n'>success</span><span class='p'>;</span>
 </code></pre></div>
-
 <p>or</p>
-
-<div class="highlight"><pre><code class="objective-c"><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">error</span><span class="p">)</span> <span class="k">return</span> <span class="n">success</span><span class="p">;</span>
+<div class='highlight'><pre><code class='objective-c'><span class='k'>if</span> <span class='p'>(</span><span class='o'>!</span><span class='n'>error</span><span class='p'>)</span> <span class='k'>return</span> <span class='n'>success</span><span class='p'>;</span>
 </code></pre></div>
-
-<h2 id="ternary-operator">Ternary Operator</h2>
+<h2 id="ternary_operator">Ternary Operator</h2>
 
 <p>The Ternary operator, ? , should only be used when it increases clarity or code neatness. A single condition is usually all that should be evaluated. Evaluating multiple conditions is usually more understandable as an if statement, or refactored into instance variables.</p>
 
 <p><strong>For example:</strong></p>
-
-<div class="highlight"><pre><code class="objective-c"><span class="n">result</span> <span class="o">=</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span> <span class="o">?</span> <span class="n">x</span> <span class="o">:</span> <span class="n">y</span><span class="p">;</span>
+<div class='highlight'><pre><code class='objective-c'><span class='n'>result</span> <span class='o'>=</span> <span class='n'>a</span> <span class='o'>&gt;</span> <span class='n'>b</span> <span class='o'>?</span> <span class='n'>x</span> <span class='o'>:</span> <span class='n'>y</span><span class='p'>;</span>
 </code></pre></div>
-
 <p><strong>Not:</strong></p>
-
-<div class="highlight"><pre><code class="objective-c"><span class="n">result</span> <span class="o">=</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span> <span class="o">?</span> <span class="n">x</span> <span class="o">=</span> <span class="n">c</span> <span class="o">&gt;</span> <span class="n">d</span> <span class="o">?</span> <span class="n">c</span> <span class="o">:</span> <span class="n">d</span> <span class="o">:</span> <span class="n">y</span><span class="p">;</span>
+<div class='highlight'><pre><code class='objective-c'><span class='n'>result</span> <span class='o'>=</span> <span class='n'>a</span> <span class='o'>&gt;</span> <span class='n'>b</span> <span class='o'>?</span> <span class='n'>x</span> <span class='o'>=</span> <span class='n'>c</span> <span class='o'>&gt;</span> <span class='n'>d</span> <span class='o'>?</span> <span class='n'>c</span> <span class='o'>:</span> <span class='n'>d</span> <span class='o'>:</span> <span class='n'>y</span><span class='p'>;</span>
 </code></pre></div>
-
-<h1 id="error-handling">Error handling</h1>
+<h1 id="error_handling">Error handling</h1>
 
 <p>When methods return an error parameter by reference, switch on the returned value, not the error variable.</p>
 
 <p><strong>For example:</strong></p>
-
-<div class="highlight"><pre><code class="objective-c"><span class="n">NSError</span> <span class="o">*</span><span class="n">error</span><span class="p">;</span>
-<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="p">[</span><span class="n">self</span> <span class="n">trySomethingWithError</span><span class="o">:&amp;</span><span class="n">error</span><span class="p">])</span> <span class="p">{</span>
-    <span class="c1">// Handle Error</span>
-<span class="p">}</span>
+<div class='highlight'><pre><code class='objective-c'><span class='n'>NSError</span> <span class='o'>*</span><span class='n'>error</span><span class='p'>;</span>
+<span class='k'>if</span> <span class='p'>(</span><span class='o'>!</span><span class='p'>[</span><span class='n'>self</span> <span class='n'>trySomethingWithError</span><span class='o'>:&amp;</span><span class='n'>error</span><span class='p'>])</span> <span class='p'>{</span>
+    <span class='c1'>// Handle Error</span>
+<span class='p'>}</span>
 </code></pre></div>
-
 <p><strong>Not:</strong></p>
-
-<div class="highlight"><pre><code class="objective-c"><span class="n">NSError</span> <span class="o">*</span><span class="n">error</span><span class="p">;</span>
-<span class="p">[</span><span class="n">self</span> <span class="n">trySomethingWithError</span><span class="o">:&amp;</span><span class="n">error</span><span class="p">];</span>
-<span class="k">if</span> <span class="p">(</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// Handle Error</span>
-<span class="p">}</span>
+<div class='highlight'><pre><code class='objective-c'><span class='n'>NSError</span> <span class='o'>*</span><span class='n'>error</span><span class='p'>;</span>
+<span class='p'>[</span><span class='n'>self</span> <span class='n'>trySomethingWithError</span><span class='o'>:&amp;</span><span class='n'>error</span><span class='p'>];</span>
+<span class='k'>if</span> <span class='p'>(</span><span class='n'>error</span><span class='p'>)</span> <span class='p'>{</span>
+    <span class='c1'>// Handle Error</span>
+<span class='p'>}</span>
 </code></pre></div>
-
 <p>Some of Apple’s APIs write garbage values to the error parameter (if non-NULL) in successful cases, so switching on the error can cause false negatives (and subsequently crash).</p>
 
 <h1 id="methods">Methods</h1>
@@ -266,10 +232,8 @@
 <p>In method signatures, there should be a space after the scope (-/+ symbol). There should be a space between the method segments.</p>
 
 <p><strong>For Example</strong>:</p>
-
-<div class="highlight"><pre><code class="objective-c"><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">setExampleText:</span><span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">text</span> <span class="nf">image:</span><span class="p">(</span><span class="n">UIImage</span> <span class="o">*</span><span class="p">)</span><span class="nv">image</span><span class="p">;</span>
+<div class='highlight'><pre><code class='objective-c'><span class='k'>-</span> <span class='p'>(</span><span class='kt'>void</span><span class='p'>)</span><span class='nf'>setExampleText:</span><span class='p'>(</span><span class='n'>NSString</span> <span class='o'>*</span><span class='p'>)</span><span class='nv'>text</span> <span class='nf'>image:</span><span class='p'>(</span><span class='n'>UIImage</span> <span class='o'>*</span><span class='p'>)</span><span class='nv'>image</span><span class='p'>;</span>
 </code></pre></div>
-
 <h1 id="variables">Variables</h1>
 
 <p>Variables should be named as descriptively as possible. Single letter variable names should be avoided except in <code>for()</code> loops.</p>
@@ -279,21 +243,17 @@
 <p>Property definitions should be used in place of naked instance variables whenever possible. Direct instance variable access should be avoided except in initializer methods (<code>init</code>, <code>initWithCoder:</code>, etc…), <code>dealloc</code> methods and within custom setters and getters. For more information on using Accessor Methods in Initializer Methods and dealloc, see <a href="https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/MemoryMgmt/Articles/mmPractical.html#//apple_ref/doc/uid/TP40004447-SW6">here</a>.</p>
 
 <p><strong>For example:</strong></p>
+<div class='highlight'><pre><code class='objective-c'><span class='k'>@interface</span> <span class='nc'>NYTSection</span>: <span class='nc'>NSObject</span>
 
-<div class="highlight"><pre><code class="objective-c"><span class="k">@interface</span> <span class="nc">NYTSection</span>: <span class="nc">NSObject</span>
+<span class='k'>@property</span> <span class='p'>(</span><span class='n'>nonatomic</span><span class='p'>)</span> <span class='n'>NSString</span> <span class='o'>*</span><span class='n'>headline</span><span class='p'>;</span>
 
-<span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">headline</span><span class="p">;</span>
-
-<span class="k">@end</span>
+<span class='k'>@end</span>
 </code></pre></div>
-
 <p><strong>Not:</strong></p>
-
-<div class="highlight"><pre><code class="objective-c"><span class="k">@interface</span> <span class="nc">NYTSection</span> : <span class="nc">NSObject</span> <span class="p">{</span>
-    <span class="n">NSString</span> <span class="o">*</span><span class="n">headline</span><span class="p">;</span>
-<span class="p">}</span>
+<div class='highlight'><pre><code class='objective-c'><span class='k'>@interface</span> <span class='nc'>NYTSection</span> : <span class='nc'>NSObject</span> <span class='p'>{</span>
+    <span class='n'>NSString</span> <span class='o'>*</span><span class='n'>headline</span><span class='p'>;</span>
+<span class='p'>}</span>
 </code></pre></div>
-
 <h1 id="naming">Naming</h1>
 
 <p>Apple naming conventions should be adhered to wherever possible, especially those related to <a href="https://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/MemoryMgmt/Articles/MemoryMgmt.html">memory management rules</a> (<a href="http://stackoverflow.com/a/2865194/340508">NARC</a>).</p>
@@ -301,46 +261,34 @@
 <p>Long, descriptive method and variable names are good.</p>
 
 <p><strong>For example:</strong></p>
-
-<div class="highlight"><pre><code class="objective-c"><span class="n">UIButton</span> <span class="o">*</span><span class="n">settingsButton</span><span class="p">;</span>
+<div class='highlight'><pre><code class='objective-c'><span class='n'>UIButton</span> <span class='o'>*</span><span class='n'>settingsButton</span><span class='p'>;</span>
 </code></pre></div>
-
 <p><strong>Not</strong></p>
-
-<div class="highlight"><pre><code class="objective-c"><span class="n">UIButton</span> <span class="o">*</span><span class="n">setBut</span><span class="p">;</span>
+<div class='highlight'><pre><code class='objective-c'><span class='n'>UIButton</span> <span class='o'>*</span><span class='n'>setBut</span><span class='p'>;</span>
 </code></pre></div>
-
 <p>A three letter prefix (e.g. <code>NYT</code>) should always be used for class names and constants, however may be omitted for Core Data entity names. Constants should be camel-case with all words capitalized and prefixed by the related class name for clarity.</p>
 
 <p><strong>For example:</strong></p>
-
-<div class="highlight"><pre><code class="objective-c"><span class="k">static</span> <span class="k">const</span> <span class="n">NSTimeInterval</span> <span class="n">NYTArticleViewControllerNavigationFadeAnimationDuration</span> <span class="o">=</span> <span class="mf">0.3</span><span class="p">;</span>
+<div class='highlight'><pre><code class='objective-c'><span class='k'>static</span> <span class='k'>const</span> <span class='n'>NSTimeInterval</span> <span class='n'>NYTArticleViewControllerNavigationFadeAnimationDuration</span> <span class='o'>=</span> <span class='mf'>0.3</span><span class='p'>;</span>
 </code></pre></div>
-
 <p><strong>Not:</strong></p>
-
-<div class="highlight"><pre><code class="objective-c"><span class="k">static</span> <span class="k">const</span> <span class="n">NSTimeInterval</span> <span class="n">fadetime</span> <span class="o">=</span> <span class="mf">1.7</span><span class="p">;</span>
+<div class='highlight'><pre><code class='objective-c'><span class='k'>static</span> <span class='k'>const</span> <span class='n'>NSTimeInterval</span> <span class='n'>fadetime</span> <span class='o'>=</span> <span class='mf'>1.7</span><span class='p'>;</span>
 </code></pre></div>
-
 <p>Properties should be camel-case with the leading word being lowercase. <strong>If Xcode can automatically synthesize the variable, then let it.</strong> Otherwise, in order to be consistent, the backing instance variables for these properties should be camel-case with the leading word being lowercase and a leading underscore. This is the same format as Xcode’s default synthesis.</p>
 
 <p><strong>For example:</strong></p>
-
-<div class="highlight"><pre><code class="objective-c"><span class="k">@synthesize</span> <span class="n">descriptiveVariableName</span> <span class="o">=</span> <span class="n">_descriptiveVariableName</span><span class="p">;</span>
+<div class='highlight'><pre><code class='objective-c'><span class='k'>@synthesize</span> <span class='n'>descriptiveVariableName</span> <span class='o'>=</span> <span class='n'>_descriptiveVariableName</span><span class='p'>;</span>
 </code></pre></div>
-
 <p><strong>Not:</strong></p>
-
-<div class="highlight"><pre><code class="objective-c"><span class="kt">id</span> <span class="n">varnm</span><span class="p">;</span>
+<div class='highlight'><pre><code class='objective-c'><span class='kt'>id</span> <span class='n'>varnm</span><span class='p'>;</span>
 </code></pre></div>
-
 <h2 id="underscores">Underscores</h2>
 
 <p>When using properties, instance variables should always be accessed and mutated using <code>self.</code>. This means that all properties will be visually distinct, as they will all be prefaced with <code>self.</code>. Local variables should not contain underscores.</p>
 
-<h1 id="image-naming">Image Naming</h1>
+<h1 id="image_naming">Image Naming</h1>
 
-<p>See the <a href="https://docs.google.com/a/invokelabs.com/viewer?a=v&amp;pid=sites&amp;srcid=aW52b2tlbGFicy5jb218aGFuZGJvb2t8Z3g6MzNjZmVhNmRjNmNkMTk0YQ">Invoke Labs Design Standards Document</a></p>
+<p>See the <a href="https://docs.google.com/a/invokelabs.com/viewer?a=v&pid=sites&srcid=aW52b2tlbGFicy5jb218aGFuZGJvb2t8Z3g6MzNjZmVhNmRjNmNkMTk0YQ">Invoke Labs Design Standards Document</a></p>
 
 <h1 id="booleans">Booleans</h1>
 
@@ -349,56 +297,40 @@
 <p>This allows for more consistency across files and greater visual clarity.</p>
 
 <p><strong>For example:</strong></p>
-
-<div class="highlight"><pre><code class="objective-c"><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">someObject</span><span class="p">)</span> <span class="p">{</span>
-<span class="p">}</span>
+<div class='highlight'><pre><code class='objective-c'><span class='k'>if</span> <span class='p'>(</span><span class='o'>!</span><span class='n'>someObject</span><span class='p'>)</span> <span class='p'>{</span>
+<span class='p'>}</span>
 </code></pre></div>
-
 <p><strong>Not:</strong></p>
-
-<div class="highlight"><pre><code class="objective-c"><span class="k">if</span> <span class="p">(</span><span class="n">someObject</span> <span class="o">==</span> <span class="nb">nil</span><span class="p">)</span> <span class="p">{</span>
-<span class="p">}</span>
-</code></pre></div>
-
-<hr />
-
+<div class='highlight'><pre><code class='objective-c'><span class='k'>if</span> <span class='p'>(</span><span class='n'>someObject</span> <span class='o'>==</span> <span class='nb'>nil</span><span class='p'>)</span> <span class='p'>{</span>
+<span class='p'>}</span>
+</code></pre></div><hr />
 <p><strong>For a <code>BOOL</code>, here are two examples:</strong></p>
-
-<div class="highlight"><pre><code class="objective-c"><span class="k">if</span> <span class="p">(</span><span class="n">isAwesome</span><span class="p">)</span>
-<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="p">[</span><span class="n">someObject</span> <span class="n">boolValue</span><span class="p">])</span>
+<div class='highlight'><pre><code class='objective-c'><span class='k'>if</span> <span class='p'>(</span><span class='n'>isAwesome</span><span class='p'>)</span>
+<span class='k'>if</span> <span class='p'>(</span><span class='o'>!</span><span class='p'>[</span><span class='n'>someObject</span> <span class='n'>boolValue</span><span class='p'>])</span>
 </code></pre></div>
-
 <p><strong>Not:</strong></p>
-
-<div class="highlight"><pre><code class="objective-c"><span class="k">if</span> <span class="p">([</span><span class="n">someObject</span> <span class="n">boolValue</span><span class="p">]</span> <span class="o">==</span> <span class="nb">NO</span><span class="p">)</span>
-<span class="k">if</span> <span class="p">(</span><span class="n">isAwesome</span> <span class="o">==</span> <span class="nb">YES</span><span class="p">)</span> <span class="c1">// Never do this.</span>
-</code></pre></div>
-
-<hr />
-
+<div class='highlight'><pre><code class='objective-c'><span class='k'>if</span> <span class='p'>([</span><span class='n'>someObject</span> <span class='n'>boolValue</span><span class='p'>]</span> <span class='o'>==</span> <span class='nb'>NO</span><span class='p'>)</span>
+<span class='k'>if</span> <span class='p'>(</span><span class='n'>isAwesome</span> <span class='o'>==</span> <span class='nb'>YES</span><span class='p'>)</span> <span class='c1'>// Never do this.</span>
+</code></pre></div><hr />
 <p>If the name of a <code>BOOL</code> property is expressed as an adjective, the property can omit the “is” prefix but specifies the conventional name for the get accessor, for example:</p>
-
-<div class="highlight"><pre><code class="objective-c"><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">getter</span><span class="o">=</span><span class="n">isEditable</span><span class="p">)</span> <span class="kt">BOOL</span> <span class="n">editable</span><span class="p">;</span>
+<div class='highlight'><pre><code class='objective-c'><span class='k'>@property</span> <span class='p'>(</span><span class='n'>assign</span><span class='p'>,</span> <span class='n'>getter</span><span class='o'>=</span><span class='n'>isEditable</span><span class='p'>)</span> <span class='kt'>BOOL</span> <span class='n'>editable</span><span class='p'>;</span>
 </code></pre></div>
-
 <p>Text and example taken from the <a href="https://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/CodingGuidelines/Articles/NamingIvarsAndTypes.html#//apple_ref/doc/uid/20001284-BAJGIIJE">Cocoa Naming Guidelines</a>.</p>
 
 <h1 id="singletons">Singletons</h1>
 
 <p>Singleton objects should use a thread-safe pattern for creating their shared instance.</p>
+<div class='highlight'><pre><code class='objective-c'><span class='k'>+</span> <span class='p'>(</span><span class='n'>instancetype</span><span class='p'>)</span><span class='nf'>sharedInstance</span> <span class='p'>{</span>
+   <span class='k'>static</span> <span class='kt'>id</span> <span class='n'>sharedInstance</span> <span class='o'>=</span> <span class='nb'>nil</span><span class='p'>;</span>
 
-<div class="highlight"><pre><code class="objective-c"><span class="k">+</span> <span class="p">(</span><span class="n">instancetype</span><span class="p">)</span><span class="nf">sharedInstance</span> <span class="p">{</span>
-   <span class="k">static</span> <span class="kt">id</span> <span class="n">sharedInstance</span> <span class="o">=</span> <span class="nb">nil</span><span class="p">;</span>
+   <span class='k'>static</span> <span class='kt'>dispatch_once_t</span> <span class='n'>onceToken</span><span class='p'>;</span>
+   <span class='n'>dispatch_once</span><span class='p'>(</span><span class='o'>&amp;</span><span class='n'>onceToken</span><span class='p'>,</span> <span class='o'>^</span><span class='p'>{</span>
+      <span class='n'>sharedInstance</span> <span class='o'>=</span> <span class='p'>[[</span><span class='n'>self</span> <span class='n'>alloc</span><span class='p'>]</span> <span class='n'>init</span><span class='p'>];</span>
+   <span class='p'>});</span>
 
-   <span class="k">static</span> <span class="kt">dispatch_once_t</span> <span class="n">onceToken</span><span class="p">;</span>
-   <span class="n">dispatch_once</span><span class="p">(</span><span class="o">&amp;</span><span class="n">onceToken</span><span class="p">,</span> <span class="o">^</span><span class="p">{</span>
-      <span class="n">sharedInstance</span> <span class="o">=</span> <span class="p">[[</span><span class="n">self</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
-   <span class="p">});</span>
-
-   <span class="k">return</span> <span class="n">sharedInstance</span><span class="p">;</span>
-<span class="p">}</span>
+   <span class='k'>return</span> <span class='n'>sharedInstance</span><span class='p'>;</span>
+<span class='p'>}</span>
 </code></pre></div>
-
 <p>This will prevent <a href="http://cocoasamurai.blogspot.com/2011/04/singletons-your-doing-them-wrong.html">possible and sometimes prolific crashes</a>.</p>
 
         </div>
