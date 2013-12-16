@@ -26,5 +26,7 @@ From this point onwards, you simply need to install [Jekyll](http://jekyllrb.com
 
 ## Linux
 
-* Install Ruby for Linux
-* Follow same instructions of Mac
+* Install Ruby for Linux via [RVM](https://rvm.io)
+    * `sudo apt-get install curl`
+    * `\curl -sSL https://get.rvm.io | bash -s stable`
+* Follow same instructions as Mac
