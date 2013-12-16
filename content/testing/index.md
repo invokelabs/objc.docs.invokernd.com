@@ -34,13 +34,11 @@ Before you can start testing you need a valid project build that you want to run
 
 2. If you haven't done so already, open Xcode and install command line tools via `Xcode > Preferences > Downloads`. Then check the `Command Line Tools` box and wait till the download/install is complete.
 
-3. When that is completed, run the following command `xcodebuild -sdk iphonesimulator6.0 TARGETED_DEVICE_FAMILY=1` inserting the desired simulator build according to your needs.
+3. When that is completed, run the following command `xcodebuild -sdk iphonesimulator6.0 TARGETED_DEVICE_FAMILY=1` inserting the desired simulator build according to your needs. If you are using cocoapods, you will need to compile using the workspace and this command instead: `xcodebuild -workspace YOURAPP.xcworkspace -sdk iphonesimulator7.0 TARGETED_DEVICE_FAMILY=1 -scheme YOURAPPPSCHEME`
 
-4. There should now be a completed build at `YOUR-PROJECT-FOLDER/build/Release-iphonesimulator/YOURAPP.app`
+4. There should now be a completed build at `YOUR-PROJECT-FOLDER/build/Release-iphonesimulator/YOURAPP.app` if you compiled your project however, you will need to grab the project build from something closer to this: `@/Users/InvokeLabs/Library/Application\ Support/iPhone\ Simulator/7.0/Applications/6EEE1E30-7223-4AC9-8CFC-58810048440C/`
 
 5. Zip this file with the following command `zip -r YOURAPP.zip YOURAPP.app` and keep track of it. This is the packaged build of your app that SauceLabs will host and you will use to run your tests so make sure its good to go.
-
-**Note:** At the time of writing this (Oct 16th, 2013), there is a bit of a hang up between cocoa pods and building via command line. If you try and build for `iPhoneSimulator7.0` you will get a clang error about lpods. It has to do with not including 64 bit architecture in the build but I didn't spend the time to figure out how modify the build from command line. Probably a pretty easy work around. Similarly, you could just downgrade your the simulator build to 6.1 or something, but if you have included anything iOS7-ish in your project that won't work either :( 
 
 ## Step 2: Uploading your build to SauceLabs
 
