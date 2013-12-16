@@ -22,7 +22,8 @@ From this point onwards, you simply need to install [Jekyll](http://jekyllrb.com
 
 * `gem install jekyll`
 * `cd` path-to-jekyll-site
-* `jekyll server --watch --port 4000` - This command tells Jekyll to spin off a standalone webserver which can be accessed from http://localhost:4000 . In addition any changes you make to the folder will be automatically built (this does NOT include changes to the less files)
+* `jekyll server --watch --port 4000` - This command tells Jekyll to spin off a standalone webserver.
+* View the site at http://localhost:4000 . In addition any changes you make to the folder will be automatically built (this does NOT include changes to the less files)
 
 ## Linux
 
