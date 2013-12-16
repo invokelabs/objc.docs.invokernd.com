@@ -193,19 +193,17 @@
 </li>
 
 <li>
-<p>When that is completed, run the following command <code>xcodebuild -sdk iphonesimulator6.0 TARGETED_DEVICE_FAMILY=1</code> inserting the desired simulator build according to your needs.</p>
+<p>When that is completed, run the following command <code>xcodebuild -sdk iphonesimulator6.0 TARGETED_DEVICE_FAMILY=1</code> inserting the desired simulator build according to your needs. If you are using cocoapods, you will need to compile using the workspace and this command instead: <code>xcodebuild -workspace YOURAPP.xcworkspace -sdk iphonesimulator7.0 TARGETED_DEVICE_FAMILY=1 -scheme YOURAPPPSCHEME</code></p>
 </li>
 
 <li>
-<p>There should now be a completed build at <code>YOUR-PROJECT-FOLDER/build/Release-iphonesimulator/YOURAPP.app</code></p>
+<p>There should now be a completed build at <code>YOUR-PROJECT-FOLDER/build/Release-iphonesimulator/YOURAPP.app</code> if you compiled your project however, you will need to grab the project build from something closer to this: <code>@/Users/InvokeLabs/Library/Application\ Support/iPhone\ Simulator/7.0/Applications/6EEE1E30-7223-4AC9-8CFC-58810048440C/</code></p>
 </li>
 
 <li>
 <p>Zip this file with the following command <code>zip -r YOURAPP.zip YOURAPP.app</code> and keep track of it. This is the packaged build of your app that SauceLabs will host and you will use to run your tests so make sure its good to go.</p>
 </li>
 </ol>
-
-<p><strong>Note:</strong> At the time of writing this (Oct 16th, 2013), there is a bit of a hang up between cocoa pods and building via command line. If you try and build for <code>iPhoneSimulator7.0</code> you will get a clang error about lpods. It has to do with not including 64 bit architecture in the build but I didn’t spend the time to figure out how modify the build from command line. Probably a pretty easy work around. Similarly, you could just downgrade your the simulator build to 6.1 or something, but if you have included anything iOS7-ish in your project that won’t work either :(</p>
 
 <h2 id="step_2_uploading_your_build_to_saucelabs">Step 2: Uploading your build to SauceLabs</h2>
 

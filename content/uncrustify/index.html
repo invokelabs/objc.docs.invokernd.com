@@ -157,10 +157,6 @@
 
 <p>Uncrustify is a tool to reformat you code to a standard that you are able to define. Although it is not able to enforce standards for things like variable naming etc. It sorts out all the issues to do with white space, bracket placement, indenting etc. All in all, not a complete replacement for internalizing the style guide, but it gets someone who refuses to read the style guide a lot closer to readable code.</p>
 
-<h2 id="assumptions">Assumptions</h2>
-
-<p>I think you need to have a valid github account to get at these repos. Accounts are free at <a href="www.github.com">github.com</a></p>
-
 <h2 id="installing_uncrustify">Installing Uncrustify</h2>
 
 <ol>
@@ -180,17 +176,17 @@
 <p>Uncrustify works with a config file that <em>you</em> will theoretically set up (most likely you’ll just download one and tweak it a bit). This file has a whole bunch of options which you can specify the details for. Ultimately, it is these details that will be carried out when you execute the program on your file(s). This Config file can be set up in a text editor but that would be pretty rough. Fortunately, there is also a GUI you can use to assemble things which is a lot more reasonable. These instructions assume you will want to use the GUI.</p>
 
 <ol>
-<li>Download the <a href="http://sourceforge.net/projects/universalindent/files/uigui/">Universal Indent GUI</a> or the latest version of <a href="https://github.com/ryanmaxwell/UncrustifyX/releases">UncrustifyX</a> and install/run it. Both work principally the same but UncrustifyX is probably more attractive to the eye while Universal Indent GUI allows you to realtime interact with files a file that you can load in from somewhere on your comp.</li>
+<li>Download the <a href="http://sourceforge.net/projects/universalindent/files/uigui/">Universal Indent GUI</a> or the latest version of <a href="https://github.com/ryanmaxwell/UncrustifyX/releases">UncrustifyX</a> and install/run it. Both work principally the same but UncrustifyX is probably more attractive to the eye.</li>
 
 <li>In either case you are going to import a <a href="https://github.com/benoitsan/BBUncrustifyPlugin-Xcode/blob/master/Resources/uncrustify.cfg">sample config</a> file or generate a blank text doc with the name <code>uncrustify.cfg</code></li>
 
-<li>Down the left column are all of the things you can have Crustify control. They can be turned on and off at your bidding.</li>
+<li>Down the left column are all of the things you can have Uncrustify control. They can be turned on and off at your bidding.</li>
 
-<li>With Universal Indent GUI you can also load a sample file with the <code>Live Indent Preview</code> option selected to visually understand the changes you’re making to your code.</li>
+<li>With both editors you can also load a sample file with the <code>Live Indent Preview</code> option selected to visually understand the changes you’re making to your code.</li>
 
 <li>When you are done you can export your <code>.config</code> file and note the location.</li>
 
-<li>Move this file somewhere in your xcode project folder that you want to Uncrustify as this is the first place that the plugin will look for your config specs. presumably you could include this file in your .gitignore file so that it is more of a local thing.</li>
+<li>Move this file to the top level of your xcode project folder as this is the first place that the plugin will look for your config specs. presumably you could include this file in your .gitignore file so that it is more of a local thing.</li>
 </ol>
 
 <h2 id="using_uncrustify">Using Uncrustify</h2>
@@ -225,7 +221,7 @@ ln -s /usr/local/bin/uncrustify uncrustify  </code></pre>
 
 <h3 id="limitations">Limitations</h3>
 
-<p>As mentioned at the beginning, Uncrustify can not sort out things that go beyond actual formatting so you are still responsible for naming conventions, correctly constructed conditional switchs and the like. For reference, <a href="https://github.com/benoitsan/BBUncrustifyPlugin-Xcode/blob/master/Resources/uncrustify.cfg">here</a> is a config file that is as close as possible to the <a href="http://objc.docs.invokernd.com/content/uncrustify/uncrustify.cfg">Invoke Labs Objective-C</a> style guide as Uncrustify can force you to be.</p>
+<p>As mentioned at the beginning, Uncrustify can not sort out things that go beyond actual formatting so you are still responsible for naming conventions, correctly constructed conditional switchs and the like. For reference, <a href="http://objc.docs.invokernd.com/content/uncrustify/uncrustify.cfg">here</a> is a config file that is as close as possible to the <a href="http://objc.docs.invokernd.com/content/uncrustify/uncrustify.cfg">Invoke Labs Objective-C</a> style guide as Uncrustify can force you to be.</p>
 
 <p>Additionally, below is a guide as to what this Uncrustify config will be formatting in your code to make it compile to the style guide and what is present in the style guide that this config file can not do.</p>
 <hr />
@@ -268,6 +264,8 @@ ln -s /usr/local/bin/uncrustify uncrustify  </code></pre>
 <ol>
 <li>Force pointer asterisks to belong to the variable not the Class.</li>
 </ol>
+
+<p><strong>Note:</strong> While it is not explicitly mentioned in the style guide, we have decided to place opening braces on a new line after the method definition yet before the body. This feature will be enforced in the config file.</p>
 <hr />
 <h4 id="things_in_the_style_guide_that_uncrustify_wontcouldnt_do">Things in the style guide that Uncrustify won’t/couldn’t do:</h4>
 
