@@ -18,11 +18,12 @@ This has only been tested on OS X and Linux.
 ## Mac
 
 Ruby is already installed by default on Mac.
-From this point onwards, you simply need to install [Jekyll](http://jekyllrb.com/)
+From this point onwards, you simply need to install [Jekyll](http://jekyllrb.com/). If your ruby is out of date, you can install Ruby via [RVM](https://rvm.io).
 
 * `gem install jekyll`
 * `cd` path-to-jekyll-site
-* `jekyll server --watch --port 4000` - This command tells Jekyll to spin off a standalone webserver.
+* `jekyll server --watch --port 4000` - This command tells Jekyll to spin off a standalone webserver. If you encounter the following errors:
+    * "Unable to find jekyll x.x.x ... " - simply run the command `bundle install`
 * View the site at http://localhost:4000 . In addition any changes you make to the folder will be automatically built (this does NOT include changes to the less files)
 
 ## Linux
