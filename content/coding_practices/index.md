@@ -62,11 +62,11 @@ Pragma marks should be used in your class implementation to separate key areas o
 {% highlight objective-c %}
 NSArray *names = @[@"Brian", @"Matt", @"Chris", @"Alex", @"Steve", @"Paul"];
 NSDictionary *productManagers = @{@"iPhone" : @"Kate", @"iPad" : @"Kamal", @"Mobile Web" : @"Bill"};
-NSNumber *shouldUseLiterals = @YES;
-NSNumber *buildingZIPCode = @10018;
+NSNumber *shouldUseLiterals = @(YES);
+NSNumber *buildingZIPCode = @(10018);
 {% endhighlight %}
 
-**Not:**
+)**Not:**
 
 {% highlight objective-c %}
 NSArray *names = [NSArray arrayWithObjects:@"Brian", @"Matt", @"Chris", @"Alex", @"Steve", @"Paul", nil];
