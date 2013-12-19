@@ -1,5 +1,5 @@
-<header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
-  <div class="container">
+<div class="container">
+  <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
     <div class="navbar-header">
       <a href="#menu">
         <button class="navbar-toggle" type="button" data-toggle="collapse">
@@ -8,60 +8,162 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-      </a>      
-      <a href="{{ page.base_url }}" class="navbar-brand">Invoke Labs</a>
+      </a>
+      <a href="{{ page.base_url }}" class="navbar-brand"><img src="{{ page.base_url }}assets/img/invokeLabs-logo.png" width="90px"></a>
     </div>
+
+    <!-- Used For the Desktop and Tablet Views -->
     <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
       <ul class="nav navbar-nav">
-        <li id="invert-color-nav" class="dropdown {% if page.slug == "style_guide" %}active{% endif %}">
-          <a href="{{ page.base_url }}content/style_guide" class="dropdown-toggle" data-toggle="dropdown">Style Guide</a>
-            <ul class="dropdown-menu">
-              <li><a href="{{ page.base_url }}content/style_guide">Overview</a></li>
-              <li><a href="{{ page.base_url }}content/style_guide#dot-notation-syntax">Dot-Notation Syntax</a></li>
-              <li><a href="{{ page.base_url }}content/style_guide#spacing">Spacing</a></li>
-              <li><a href="{{ page.base_url }}content/style_guide#conditionals">Conditionals</a></li>
-              <li><a href="{{ page.base_url }}content/style_guide#error-handling">Error handling</a></li>
-              <li><a href="{{ page.base_url }}content/style_guide#methods">Methods</a></li>
-              <li><a href="{{ page.base_url }}content/style_guide#variables">Variables</a></li>
-              <li><a href="{{ page.base_url }}content/style_guide#naming">Naming</a></li>
-              <li><a href="{{ page.base_url }}content/style_guide#image-naming">Image Naming</a></li>
-              <li><a href="{{ page.base_url }}content/style_guide#booleans">Booleans</a></li>
-              <li><a href="{{ page.base_url }}content/style_guide#singletons">Singletons</a></li>
-            </ul>
+  
+        <li class="dropdown" id="invert-color-nav" {% if page.slug == "style_guide" %}active{% endif %}>
+          <a href="{{ page.base_url }}content/style_guide" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">Style Guide</a>
+          <ul class="dropdown-menu" id="dropdown-menu-override">
+            <li id="subnav-align"><a href="{{ page.base_url }}content/style_guide">Overview</a></li>
+            <li id="subnav-align"><a href="{{ page.base_url }}content/style_guide#dot-notation-syntax">Dot-Notation Syntax</a></li>
+            <li id="subnav-align"><a href="{{ page.base_url }}content/style_guide#spacing">Spacing</a></li>
+            <li id="subnav-align"><a href="{{ page.base_url }}content/style_guide#conditionals">Conditionals</a></li>
+            <li id="subnav-align"><a href="{{ page.base_url }}content/style_guide#error-handling">Error handling</a></li>
+            <li id="subnav-align"><a href="{{ page.base_url }}content/style_guide#methods">Methods</a></li>
+            <li id="subnav-align"><a href="{{ page.base_url }}content/style_guide#variables">Variables</a></li>
+            <li id="subnav-align"><a href="{{ page.base_url }}content/style_guide#naming">Naming</a></li>
+            <li id="subnav-align"><a href="{{ page.base_url }}content/style_guide#image-naming">Image Naming</a></li>
+            <li id="subnav-align"><a href="{{ page.base_url }}content/style_guide#booleans">Booleans</a></li>
+            <li id="subnav-align"><a href="{{ page.base_url }}content/style_guide#singletons">Singletons</a></li>
+          </ul>
         </li>
 
-        <li id="invert-color-nav" class="dropdown {% if page.slug == "coding_practices" %}active{% endif %}">
-          <a href="{{ page.base_url }}content/coding_practices" class="dropdown-toggle" data-toggle="dropdown">Coding Practices</a>
-            <ul class="dropdown-menu">
-              <li><a href="{{ page.base_url }}content/coding_practices">Overview</a></li>              
-              <li><a href="{{ page.base_url }}content/coding_practices#init-and-dealloc">init and dealloc</a></li>
-              <li><a href="{{ page.base_url }}content/coding_practices#class-layout">Class Layout</a></li>
-              <li><a href="{{ page.base_url }}content/coding_practices#literals">Literals</a></li>
-              <li><a href="{{ page.base_url }}content/coding_practices#cgrect-functions">CGRect Functions</a></li>
-              <li><a href="{{ page.base_url }}content/coding_practices#constants">Constants</a></li>
-              <li><a href="{{ page.base_url }}content/coding_practices#enumerated-types">Enumerated Types</a></li>
-              <li><a href="{{ page.base_url }}content/coding_practices#private-properties">Private Properties</a></li>
-              <li><a href="{{ page.base_url }}content/coding_practices#blocks">Blocks</a></li>
-            </ul>
+        <li class="dropdown" id="invert-color-nav" {% if page.slug == "coding_practices" %}active{% endif %}>
+          <a href="{{ page.base_url }}content/coding_practices" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">Coding Practices</a>
+          <ul class="dropdown-menu" id="dropdown-menu-override">
+            <li id="subnav-align"><a href="{{ page.base_url }}content/coding_practices">Overview</a></li> 
+            <li id="subnav-align"><a href="{{ page.base_url }}content/coding_practices#init-and-dealloc">init and dealloc</a></li>
+            <li id="subnav-align"><a href="{{ page.base_url }}content/coding_practices#class-layout">Class Layout</a></li>
+            <li id="subnav-align"><a href="{{ page.base_url }}content/coding_practices#literals">Literals</a></li>
+            <li id="subnav-align"><a href="{{ page.base_url }}content/coding_practices#cgrect-functions">CGRect Functions</a></li>
+            <li id="subnav-align"><a href="{{ page.base_url }}content/coding_practices#constants">Constants</a></li>
+            <li id="subnav-align"><a href="{{ page.base_url }}content/coding_practices#enumerated-types">Enumerated Types</a></li>
+            <li id="subnav-align"><a href="{{ page.base_url }}content/coding_practices#private-properties">Private Properties</a></li>
+            <li id="subnav-align"><a href="{{ page.base_url }}content/coding_practices#blocks">Blocks</a></li>
+          </ul>
         </li>
 
-        <li id="invert-color-nav" {% if page.slug == "documentation" %} class="active"{% endif %}>
+        <li id="invert-color-nav" {% if page.slug == "Documentation" %} class="active"{% endif %}>
           <a href="{{ page.base_url }}content/documentation">Documentation</a>
         </li>
-
-        <li id="invert-color-nav" {% if page.slug == "xcode" %} class="active"{% endif %}>
+        <li id="invert-color-nav" {% if page.slug == "Xcode" %} class="active"{% endif %}>
           <a href="{{ page.base_url }}content/xcode">Xcode</a>
         </li>
-        <li id="invert-color-nav" {% if page.slug == "Testing" %} class="active"{% endif %}>
+        <li id="invert-color-nav" {% if page.slug == "testing" %} class="active"{% endif %}>
           <a href="{{ page.base_url }}content/testing">Testing</a>
         </li>
-        <li id="invert-color-nav" {% if page.slug == "Uncrustify" %} class="active"{% endif %}>
+        <li id="invert-color-nav" {% if page.slug == "uncrustify" %} class="active"{% endif %}>
           <a href="{{ page.base_url }}content/uncrustify">Uncrustify</a>
         </li>
-        <li id="invert-color-nav" {% if page.slug == "Uncrustify" %} class="active"{% endif %}>
-            <a href="https://github.com/invokelabs/objc.docs.invokernd.com" target="_blank">Source Code</a>
+        <li id="invert-color-nav" {% if page.slug == "sourcecode" %} class="active"{% endif %}>
+          <a href="https://github.com/invokelabs/objc.docs.invokernd.com" target="_blank">Source Code</a>
         </li>
       </ul>
     </nav>
-  </div>
-</header>
+
+    <!-- Overrides the top nav tag so the mobile slide menu can work -->
+    <nav id="menu">
+      <ul>
+
+        <li>
+          <a href="{{ page.base_url }}content/style_guide">Style Guide</a>
+        </li>
+        <li>
+          <a id="submenu-text" href="{{ page.base_url }}content/style_guide">Overview</a>
+        </li>
+        <li>
+          <a id="submenu-text" href="{{ page.base_url }}content/style_guide#dot-notation-syntax">Dot-Notation Syntax</a>
+        </li>
+        <li>
+          <a id="submenu-text" href="{{ page.base_url }}content/style_guide#spacing">Spacing</a>
+        </li>
+        <li>
+          <a id="submenu-text" href="{{ page.base_url }}content/style_guide#conditionals">Conditionals</a>
+        </li>
+        <li>
+          <a id="submenu-text" href="{{ page.base_url }}content/style_guide#error-handling">Error handling</a>
+        </li>
+        <li>
+          <a id="submenu-text" href="{{ page.base_url }}content/style_guide#methods">Methods</a>
+        </li>
+        <li>
+          <a id="submenu-text" href="{{ page.base_url }}content/style_guide#variables">Variables</a>
+        </li>
+        <li>
+          <a id="submenu-text" href="{{ page.base_url }}content/style_guide#naming">Naming</a>
+        </li>
+        <li>
+          <a id="submenu-text" href="{{ page.base_url }}content/style_guide#image-naming">Image Naming</a>
+        </li>
+        <li>
+          <a id="submenu-text" href="{{ page.base_url }}content/style_guide#booleans">Booleans</a>
+        </li>
+        <li>
+          <a id="submenu-text" href="{{ page.base_url }}content/style_guide#singletons">Singletons</a>
+        </li>
+
+        <li>
+          <a href="{{ page.base_url }}content/coding_practices">Coding Practices</a>
+        </li>
+        <li>
+          <a id="submenu-text" href="{{ page.base_url }}content/coding_practices">Overview</a>
+        </li>              
+        <li>
+          <a id="submenu-text" href="{{ page.base_url }}content/coding_practices#init-and-dealloc">init and dealloc</a>
+        </li>
+        <li>
+          <a id="submenu-text" href="{{ page.base_url }}content/coding_practices#class-layout">Class Layout</a>
+        </li>
+        <li>
+          <a id="submenu-text" href="{{ page.base_url }}content/coding_practices#literals">Literals</a>
+        </li>
+        <li>
+          <a id="submenu-text" href="{{ page.base_url }}content/coding_practices#cgrect-functions">CGRect Functions</a>
+        </li>
+        <li>
+          <a id="submenu-text" href="{{ page.base_url }}content/coding_practices#constants">Constants</a>
+        </li>
+        <li>
+          <a id="submenu-text" href="{{ page.base_url }}content/coding_practices#enumerated-types">Enumerated Types</a>
+        </li>
+        <li>
+          <a id="submenu-text" href="{{ page.base_url }}content/coding_practices#private-properties">Private Properties</a>
+        </li>
+        <li>
+          <a id="submenu-text" href="{{ page.base_url }}content/coding_practices#blocks">Blocks</a>
+        </li>
+        
+
+        <li{% if page.slug == "documentation" %} class="active"{% endif %}>
+          <a href="{{ page.base_url }}content/documentation">Documentation</a>
+        </li>
+        <li{% if page.slug == "xcode" %} class="active"{% endif %}>
+          <a href="{{ page.base_url }}content/xcode">Xcode</a>
+        </li>
+        <li{% if page.slug == "Testing" %} class="active"{% endif %}>
+          <a href="{{ page.base_url }}content/testing">Testing</a>
+        </li>
+        <li{% if page.slug == "Uncrustify" %} class="active"{% endif %}>
+          <a href="{{ page.base_url }}content/uncrustify">Uncrustify</a>
+        </li>
+        <li{% if page.slug == "Uncrustify" %} class="active"{% endif %}>
+          <a href="https://github.com/invokelabs/objc.docs.invokernd.com" target="_blank">Source Code</a>
+        </li>
+        <div id="img-right-align">
+          <a href="https://www.facebook.com/InvokeLabs"><li id="img-inline" class="icon-facebook"></li></a>
+          <a href="https://twitter.com/InvokeLabs"><li id="img-inline" class="icon-twitter"></li></a>
+          <a href="http://instagram.com/invokelabs"><li id="img-inline" class="icon-linkedin"></li></a>
+          <a href="http://www.linkedin.com/company/invoke-labs"><li id="img-inline" class="icon-instagramm"></li></a>
+          <a href="https://github.com/invokelabs/objc.docs.invokernd.com"><li id="img-inline" class="icon-github"></li></a>
+        </div>
+        <li id="contact-info">313-1 Alexander Street<br/>Vancouver, BC V6A 2E9<br/>604.689.3323<br/>info@invokelabs.com</li>
+      </ul>
+    </nav>
+
+  </header>
+</div>

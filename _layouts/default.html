@@ -4,107 +4,32 @@
     <!-- Meta, title, CSS, favicons, etc. -->
     {% include header.html %}
     <!-- Place anything custom after this. -->
-    <style>
-    .footer-links ul {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .footer-links .links-left {
-      padding-left: 40%;
-    }
-
-    .footer-links .links-right {
-      padding-right: 40%;
-    }
-
-    </style>
   </head>
-  <body>
-    <a class="sr-only" href="#content">Skip navigation</a>
+  <body style="visibility:hidden" onload="unhideBody()">
+    <div id="overlay"> 
+      <a class="sr-only" href="#content">Skip navigation</a>
+      <!-- Docs master nav -->
+      {% include nav-main.html %}
 
-    <!-- Docs master nav -->
-    {% include nav-main.html %}
-
-    <!-- Docs page layout -->
-    <div class="bs-header" id="content">
-      <div class="container">
-        <h1>{{ page.title }}</h1>
+      <!-- Docs page layout -->
+      <div class="bs-header" id="content">
+        <div class="container" id="fade-in">
+          <h1>{{ page.title }}</h1>
+        </div>
       </div>
-    </div>
-    <br/>
-    <div class="container center bs-docs-container">
-      <div class="row">
-<!--         <div class="col-md-3">
-          <div class="bs-sidebar hidden-print" role="complementary">
-            <ul class="nav bs-sidenav">
-              &nbsp;
-              {% if page.slug == "getting-started" %}
-                {% include nav-getting-started.html %}
-              {% elsif page.slug == "css" %}
-                {% include nav-css.html %}
-              {% elsif page.slug == "components" %}
-                {% include nav-components.html %}
-              {% elsif page.slug == "js" %}
-                {% include nav-javascript.html %}
-              {% elsif page.slug == "customize" %}
-                {% include nav-customize.html %}
-              {% endif %}
-            </ul>
+      
+      <div class="container-upper-body">
+        <div class="row">
+          <div class="body-content col-md-12" role="main">
+            {{ content }}
           </div>
-        </div> -->
-        <div class="body-content col-md-12" role="main">
-          {{ content }}
         </div>
       </div>
 
     </div>
-
-    <!-- Footer
-    ================================================== -->
-    <footer class="bs-footer" role="contentinfo">
-      <div class="container">
-        <!-- <ul class="footer-links">
-          <li><a href="http://www.invokelabs.com" target="_blank">Website</a></li>
-        </ul>
-        <p class="left-corner">2013 Invoke Labs</p>
-        <p class="right-corner">1.888.207.4106</p>
- -->      </div>
-    </footer>
-
-    <div id="footer">
-      <div id="top-footer">    
-        <div class="container" >
-          <div id="table-footer" class="row footer-links">
-            <div class="col-md-6 links-left">
-              <ul>
-                <li><a href="http://www.invokemedia.com/careers" target="_blank">Careers</a></li>
-                <li><a href="http://www.invokemedia.com/contact-us" target="_blank">Contact</a></li>
-                <li><a href="http://www.invokemedia.com/blog/" target="_blank">Blog</a></li>
-              <ul>
-            </div>
-            <div class="col-md-6 links-right">
-              <ul>
-                <li><a href="http://www.facebook.com/InvokeLabs?fb_ref=objc&fb_source=objc.dev" target="_blank">Facebook</a></li>
-                <li><a href="https://twitter.com/InvokeLabs" target="_blank">Twitter</a></li>
-                <li><a href="http://instagram.com/invokelabs" target="_blank">Instagram</a></li>
-                <li><a href="http://www.linkedin.com/company/2922987" target="_blank">Linkedin</a></li>
-                <li><a href="http://www.github.com/InvokeLabs" target="_blank">Linkedin</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div id="bottom-footer">
-        <div class="container">
-          <p class="left-corner">{{ site.time | date: "%Y" }} Invoke Labs Inc.</p>
-          <p class="right-corner">1.888.207.4106</p>
-        </div>
-      </div>
-    </div> 
 
     <!-- JS and analytics only. -->
+
     {% include footer.html %}
 
   </body>

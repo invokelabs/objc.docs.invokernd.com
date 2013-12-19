@@ -5,6 +5,9 @@ slug: coding_practices
 base_url: "/"
 ---
 
+* Table of Contents
+{:toc}
+
 # init and dealloc
 
 `dealloc` methods should be placed at the top of the implementation, directly after the `@synthesize` and `@dynamic` statements. `init` should be placed directly below the `dealloc` methods of any class.

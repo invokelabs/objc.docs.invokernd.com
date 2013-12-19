@@ -24,68 +24,159 @@
  * Miscellaneous
  */
 
-ul:hover > #invert-color-nav a{
-  color: #d90034;
-  -webkit-transition: all 0.4s ease;
-  -moz-transition: all 0.4s ease;
-  -o-transition: all 0.4s ease;
-  transition: all 0.4s ease;
+/* GLOBAL (ALL PAGES) */
+#fade-in {
+  display: none;
 }
 
-#invert-color-nav a {
-  color: #fff;
-  text-decoration: none;
+.scroll-top-arrow-desktop {
+  position: relative;
 }
 
-ul > #invert-color-nav:hover a{
-  color: #fff;
-  opacity:1;
-  text-shadow:none;
+.scroll-top-arrow-desktop img {
+  position: absolute;
+  right: 100px;
+  bottom: 0px;
 }
 
+.scroll-top-arrow-mobile {
+  display: none;
+}
+
+@media (max-width: 935px) {
+  .scroll-to-top-arrow, .scroll-top-arrow-desktop img {
+    display: none;
+  }
+}
+
+@media (max-width: 934px) {
+  .scroll-top-arrow-mobile {
+    text-align: center;
+    background-color: #eb4348;
+    display: inherit;
+  }
+}
+
+/* Font Override on Bootstrap */
+body,
+input,
+button,
+select,
+textarea,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "proxima-nova";
+  letter-spacing: 1.5px;
+}
+
+h1 {
+  font-family: "rooney-sans";
+  letter-spacing: 1.5px;
+}
+
+p {
+  font-size: 16px;
+  letter-spacing: 1.5px;
+}
+
+/* HOME PAGE */
+.container-upper-body {
+  background-color: #e5e2e1;
+/*  text-align: center;
+  margin-left: auto;
+  margin-right: auto;*/
+  padding-left: 15px;
+  padding-right: 15px; 
+  padding-top: 15px;
+}
+
+@media (min-width: 1500px) {
+  .container-upper-body h3, .container-upper-body p {
+     /*padding-left: 440px;
+     padding-right: 440px;*/
+  }
+}
+
+
+/* COPYRIGHT AND PHONE NUMBER STYLING */
 p.left-corner {
   float: left;
 }
 
 p.right-corner {
   float: right;
-  margin-right: 70px;
 }
 
-#footer #innerWrap {
+/* FOOTER STYLES */
+.footer .innerWrap { 
   margin: 40px 0 0 0;
 }
 
-#top-footer {
+.top-footer {
+  padding-top:20px;
   background: #afaba5;
   height: 240px;
-  padding-top: 15px;
 }
 
-#bottom-footer {
+.bottom-footer {
   background: #706258;
   height: 50px;
   padding-top: 15px;
 }
 
-#tagline-footer {
+.tagline-footer {
   margin-bottom: 40px;
-  text-align: center;
+  text-align: center; 
 }
 
-#table-footer {
+@media (max-width: 480px) { 
+  .top-footer {
+    height: 130px;
+  }
+
+  .tagline-footer {
+    display: none;
+    margin: 0;
+  }
+  p.left-corner {
+    font-size: 12px;
+  }
+
+  p.right-corner {
+    font-size: 12px;
+  }
+}
+
+.table-footer {
   margin-right: auto;
   margin-left: auto;
   padding-left: auto;
   padding-right: auto;
 }
 
-#table-left-item-footer {
-  padding-right: 60px;
+.table-left-item-footer {
+  padding-right: 130px;
+  padding-top: 2px;
+  padding-bottom: 2px;
 }
 
-#table-right-item-footer {
-  padding-left: 60px;
+.table-right-item-footer {
+  padding-left: 130px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+@media (max-width: 767px) { 
+  .table-left-item-footer {
+    padding-right: 40px;
+  }
+
+  .table-right-item-footer {
+    padding-left: 40px;
+  }
 }
 
 /*
@@ -143,6 +234,56 @@ body {
  * Turn the `.navbar` at the top of the docs red.
  */
 
+/* CUSTOM STYLING OVERRIDE*/
+ul:hover > #invert-color-nav a{
+    color: #ff8b8e;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+#invert-color-nav a {
+  /*color: #6F6157;*/
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+ul > #invert-color-nav:hover a{
+    color: #fff;
+    opacity:1;
+    text-shadow:none;
+}
+
+#subnav-align {
+  display: inline;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+ul:hover > #subnav-align a{
+  color: #FFF;
+  -webkit-transition: all 0.1s ease;
+  -moz-transition: all 0.1s ease;
+  -o-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+
+#subnav-align a {
+  color: #6F6157;
+}
+
+ul > #subnav-align:hover a{
+  color: #6F6157;
+  opacity:1;
+  text-shadow:none;
+}
+
+#dropdown-menu-override {
+  padding: 15px 0 15px 0;
+}
+
 .bs-docs-nav {
   text-shadow: 0 -1px 0 rgba(0,0,0,.15);
   background-color: #eb4348;
@@ -156,7 +297,7 @@ body {
 }
 
 .bs-docs-nav .navbar-nav > li > a {
-  color: #d90034;
+  color: white;
 }
 .bs-docs-nav .navbar-nav > li > a:hover {
   color: #fff;
@@ -175,10 +316,6 @@ body {
   border-color: #eb4348;
 }
 
-.bs-docs-nav .navbar-nav > .active > a {
-  background-color: #333333;
-}
-
 /*
  * Footer
  *
@@ -186,7 +323,7 @@ body {
  */
 
 #overlay {
-  background-color: #e5e2e1;
+  background-color: white;
 }
 
 .bs-footer {
@@ -199,22 +336,17 @@ body {
   /*bottom: 0;
   height: 0;*/
   overflow:none;
-
+  
   -moz-transition:all 0.5s ease-in-out;
   -o-transition:all 0.5s ease-in-out;
   transition:all 0.5s ease-in-out;
   -webkit-transition:all 0.5s ease-in-out;
 }
 
-/*.bs-footer.show
-{
-  height: 290px;
-
-  -moz-transition:all 0.5s ease-in-out;
-  -o-transition:all 0.5s ease-in-out;
-  transition:all 0.5s ease-in-out;
-  -webkit-transition:all 0.5s ease-in-out;
-}*/
+.bs-footer a {
+  color: #fff;
+  /*text-decoration: none;*/
+}
 
 .footer-links {
   margin: 10px 0;
@@ -295,9 +427,8 @@ body {
   color: #fff;
   width: 100%;
   background-color: black;
-  /*background-image: url(/assets/img/sunrise.gif);*/
-  /*background-size: 100% 100%;*/
-  /*background-repeat: no-repeat;*/
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
 
 
@@ -307,8 +438,8 @@ body {
  * Tweaks to the custom homepage and the masthead (main jumbotron).
  */
 
-/* Masthead (headings and download button) */
-.bs-masthead {
+ /* Masthead (headings and download button) */
+ .bs-masthead {
   position: relative;
   padding: 30px 15px;
   text-align: center;
@@ -373,12 +504,12 @@ body {
 
 /* Page headers */
 .bs-header {
-  /*padding: 50px 15px 50px;  side padding builds on .container 15px, so 30px */
-  padding: 0px 0px 30px 0px;
+  padding: 80px 0px 80px 0px;
   font-size: 16px;
   text-align: center;
   text-shadow: 0 1px 0 rgba(0,0,0,.15);
 }
+
 .bs-header h1 {
   color: #fff;
 }
@@ -390,10 +521,18 @@ body {
   position: relative;
 }
 
+@media (min-width: 1500px) {
+  .bs-header .container {
+    padding-left: 200px;
+    padding-right: 200px;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .bs-header {
     font-size: 21px;
-    text-align: left;
+    /*text-align: left;*/
+    text-align: center;
   }
   .bs-header h1 {
     font-size: 60px;
@@ -404,7 +543,7 @@ body {
 @media screen and (min-width: 992px) {
   .bs-header h1,
   .bs-header p {
-    margin-right: 380px;
+    /*margin-right: 380px;*/
   }
 }
 
@@ -795,10 +934,6 @@ h1[id] {
 }
 
 /* Navbars */
-.navbar {
-  border-bottom: 0px;
-}
-
 .bs-example .navbar:last-child {
   margin-bottom: 0;
 }
@@ -880,17 +1015,7 @@ h1[id] {
   margin-right: auto;
 }
 
-/* dropdowns */
-.dropdown-menu {
-  min-width: 160px;
-  left: 0px;
-  background: #ffffff;
-}
-
-#invert-color-nav .dropdown-menu > li > a {
-  color: #333;
-}
-
+/* Example dropdowns */
 .bs-example > .dropdown > .dropdown-menu {
   position: static;
   display: block;
@@ -1186,7 +1311,7 @@ h1[id] {
   outline: 0;
   outline: thin dotted \9; /* IE6-9 */
   -moz-box-shadow: 0 0 8px rgba(82,168,236,.6);
-  box-shadow: 0 0 8px rgba(82,168,236,.6);
+       box-shadow: 0 0 8px rgba(82,168,236,.6);
 }
 
 /* Better spacing on download options in getting started */
