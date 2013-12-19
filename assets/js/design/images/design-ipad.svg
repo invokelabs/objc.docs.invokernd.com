@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 17.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="169.6px" height="251.8px" viewBox="0 0 169.6 251.8" style="enable-background:new 0 0 169.6 251.8;" xml:space="preserve"
+	>
+<style type="text/css">
+	.st0{fill:#2DCC70;}
+	.st1{fill:#20A056;}
+	.st2{fill:#0D7F3B;}
+	.st3{fill:#F75A92;}
+	.st4{fill:#CC3E78;}
+	.st5{fill:#B22465;}
+	.st6{fill:#FFFFFF;}
+	.st7{fill:#FC9D0E;}
+	.st8{fill:#D87600;}
+	.st9{fill:#B25D00;}
+	.st10{fill:#217CCE;}
+	.st11{fill:#0063AD;}
+	.st12{fill:#005182;}
+	.st13{fill:#353E4C;}
+	.st14{fill:#1A2433;}
+	.st15{fill:#050B14;}
+	.st16{fill:#FFFFFF;stroke:#FFFFFF;stroke-miterlimit:10;}
+	.st17{fill:#272727;}
+	.st18{fill:#EC4348;}
+	.st19{fill:#FD7174;}
+	.st20{fill:#FCA2A4;}
+	.st21{fill:#CD2C31;}
+	.st22{fill:none;stroke:#FFFFFF;stroke-width:3;stroke-miterlimit:10;}
+	.st23{fill:none;stroke:#FFFFFF;stroke-width:2;stroke-miterlimit:10;}
+</style>
+<g>
+	<rect x="14.3" y="28.4" class="st18" width="141" height="196"/>
+	<g>
+		<circle class="st6" cx="84.8" cy="14.7" r="1.9"/>
+		<path class="st22" d="M168.1,236.5c0,7.6-6.1,13.7-13.7,13.7H15.2c-7.6,0-13.7-6.1-13.7-13.7V15.2c0-7.6,6.1-13.7,13.7-13.7h139.1
+			c7.6,0,13.7,6.1,13.7,13.7V236.5z"/>
+		<rect x="12.9" y="26.7" class="st22" width="143.8" height="199.2"/>
+		<g>
+			<path class="st6" d="M85.3,234.1c2.2,0,3.9,1.8,3.9,3.9c0,2.2-1.8,3.9-3.9,3.9c-2.2,0-3.9-1.8-3.9-3.9
+				C81.3,235.8,83.1,234.1,85.3,234.1 M85.3,231.1c-3.8,0-6.9,3.1-6.9,6.9s3.1,6.9,6.9,6.9s6.9-3.1,6.9-6.9S89.1,231.1,85.3,231.1
+				L85.3,231.1z"/>
+		</g>
+	</g>
+	<rect x="21.6" y="55.4" class="st19" width="127.4" height="54.1"/>
+	<rect x="21.6" y="37.5" class="st20" width="40.3" height="10.7"/>
+	<g>
+		<rect x="120.7" y="37.5" class="st20" width="10.7" height="10.7"/>
+		<rect x="103.1" y="37.5" class="st20" width="10.7" height="10.7"/>
+		<rect x="138.3" y="37.5" class="st20" width="10.7" height="10.7"/>
+	</g>
+	<g>
+		<rect x="21.6" y="172.8" class="st20" width="60.2" height="4.4"/>
+		<rect x="21.6" y="163.8" class="st20" width="60.2" height="4.4"/>
+	</g>
+	<g>
+		<rect x="88.7" y="172.8" class="st20" width="60.2" height="4.4"/>
+		<rect x="88.7" y="163.8" class="st20" width="60.2" height="4.4"/>
+	</g>
+	<g>
+		<circle class="st20" cx="68.6" cy="101.2" r="3.4"/>
+		<circle class="st21" cx="90.2" cy="101.2" r="3.4"/>
+		<circle class="st21" cx="79.4" cy="101.2" r="3.4"/>
+		<circle class="st21" cx="100.9" cy="101.2" r="3.4"/>
+	</g>
+	<g>
+		<rect x="88.8" y="116" class="st19" width="60.2" height="42.6"/>
+		<polygon class="st20" points="138.3,116 149,116 149,126.7 		"/>
+		<rect x="21.9" y="116" class="st19" width="60.2" height="42.6"/>
+		<polygon class="st20" points="71.4,116 82,116 82,126.7 		"/>
+	</g>
+	<g>
+		<rect x="88.8" y="182.7" class="st19" width="60.2" height="41.4"/>
+		<polygon class="st20" points="138.3,182.7 149,182.7 149,193.4 		"/>
+		<rect x="21.9" y="182.7" class="st19" width="60.2" height="41.4"/>
+		<polygon class="st20" points="71.4,182.7 82,182.7 82,193.4 		"/>
+	</g>
+</g>
+</svg>
