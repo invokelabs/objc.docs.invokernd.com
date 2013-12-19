@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+
+<title>
+  
+    Uncrustify &middot; Bootstrap
+  
+</title>
+
+<!-- Bootstrap core CSS -->
+<link href="/assets/css/bootstrap.css" rel="stylesheet">
+
+<!-- Documentation extras -->
+<link href="/assets/css/docs.css" rel="stylesheet">
+<link href="/assets/css/pygments-manni.css" rel="stylesheet">
+
+<link href="/assets/css/mmenu.css" rel="stylesheet">
+<link href="/assets/css/mmenu-positioning.css" rel="stylesheet">
+<link href="/fonts/icon-fonts/css/fontello.css" rel="stylesheet">
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+  <script src="/assets/js/html5shiv.js"></script>
+  <script src="/assets/js/respond.min.js"></script>
+<![endif]-->
+
+<!-- Favicons -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/ico/apple-touch-icon-144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/ico/apple-touch-icon-114-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/ico/apple-touch-icon-72-precomposed.png">
+                <link rel="apple-touch-icon-precomposed" href="/assets/ico/apple-touch-icon-57-precomposed.png">
+                               <link rel="shortcut icon" href="/assets/ico/favicon.png">
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-44789370-1', 'invokernd.com');
+  ga('send', 'pageview');
+
+</script>
+
+    <!-- Place anything custom after this. -->
+  </head>
+  <body style="visibility:hidden" onload="unhideBody()">
+    <div id="overlay"> 
+      <a class="sr-only" href="#content">Skip navigation</a>
+      <!-- Docs master nav -->
+      <div class="container">
+  <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
+    <div class="navbar-header">
+      <a href="#menu">
+        <button class="navbar-toggle" type="button" data-toggle="collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+      </a>
+      <a href="/" class="navbar-brand"><img src="/assets/img/invokeLabs-logo.png" width="90px"></a>
+    </div>
+
+    <!-- Used For the Desktop and Tablet Views -->
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+  
+        <li class="dropdown" id="invert-color-nav" >
+          <a href="/content/style_guide" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">Style Guide</a>
+          <ul class="dropdown-menu" id="dropdown-menu-override">
+            <li id="subnav-align"><a href="/content/style_guide">Overview</a></li>
+            <li id="subnav-align"><a href="/content/style_guide#dot-notation-syntax">Dot-Notation Syntax</a></li>
+            <li id="subnav-align"><a href="/content/style_guide#spacing">Spacing</a></li>
+            <li id="subnav-align"><a href="/content/style_guide#conditionals">Conditionals</a></li>
+            <li id="subnav-align"><a href="/content/style_guide#error-handling">Error handling</a></li>
+            <li id="subnav-align"><a href="/content/style_guide#methods">Methods</a></li>
+            <li id="subnav-align"><a href="/content/style_guide#variables">Variables</a></li>
+            <li id="subnav-align"><a href="/content/style_guide#naming">Naming</a></li>
+            <li id="subnav-align"><a href="/content/style_guide#image-naming">Image Naming</a></li>
+            <li id="subnav-align"><a href="/content/style_guide#booleans">Booleans</a></li>
+            <li id="subnav-align"><a href="/content/style_guide#singletons">Singletons</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown" id="invert-color-nav" >
+          <a href="/content/coding_practices" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">Coding Practices</a>
+          <ul class="dropdown-menu" id="dropdown-menu-override">
+            <li id="subnav-align"><a href="/content/coding_practices">Overview</a></li> 
+            <li id="subnav-align"><a href="/content/coding_practices#init-and-dealloc">init and dealloc</a></li>
+            <li id="subnav-align"><a href="/content/coding_practices#class-layout">Class Layout</a></li>
+            <li id="subnav-align"><a href="/content/coding_practices#literals">Literals</a></li>
+            <li id="subnav-align"><a href="/content/coding_practices#cgrect-functions">CGRect Functions</a></li>
+            <li id="subnav-align"><a href="/content/coding_practices#constants">Constants</a></li>
+            <li id="subnav-align"><a href="/content/coding_practices#enumerated-types">Enumerated Types</a></li>
+            <li id="subnav-align"><a href="/content/coding_practices#private-properties">Private Properties</a></li>
+            <li id="subnav-align"><a href="/content/coding_practices#blocks">Blocks</a></li>
+          </ul>
+        </li>
+
+        <li id="invert-color-nav" >
+          <a href="/content/documentation">Documentation</a>
+        </li>
+        <li id="invert-color-nav" >
+          <a href="/content/xcode">Xcode</a>
+        </li>
+        <li id="invert-color-nav" >
+          <a href="/content/testing">Testing</a>
+        </li>
+        <li id="invert-color-nav" >
+          <a href="/content/uncrustify">Uncrustify</a>
+        </li>
+        <li id="invert-color-nav" >
+          <a href="https://github.com/invokelabs/objc.docs.invokernd.com" target="_blank">Source Code</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Overrides the top nav tag so the mobile slide menu can work -->
+    <nav id="menu">
+      <ul>
+
+        <li>
+          <a href="/content/style_guide">Style Guide</a>
+        </li>
+        <li>
+          <a id="submenu-text" href="/content/style_guide">Overview</a>
+        </li>
+        <li>
+          <a id="submenu-text" href="/content/style_guide#dot-notation-syntax">Dot-Notation Syntax</a>
+        </li>
+        <li>
+          <a id="submenu-text" href="/content/style_guide#spacing">Spacing</a>
+        </li>
+        <li>
+          <a id="submenu-text" href="/content/style_guide#conditionals">Conditionals</a>
+        </li>
+        <li>
+          <a id="submenu-text" href="/content/style_guide#error-handling">Error handling</a>
+        </li>
+        <li>
+          <a id="submenu-text" href="/content/style_guide#methods">Methods</a>
+        </li>
+        <li>
+          <a id="submenu-text" href="/content/style_guide#variables">Variables</a>
+        </li>
+        <li>
+          <a id="submenu-text" href="/content/style_guide#naming">Naming</a>
+        </li>
+        <li>
+          <a id="submenu-text" href="/content/style_guide#image-naming">Image Naming</a>
+        </li>
+        <li>
+          <a id="submenu-text" href="/content/style_guide#booleans">Booleans</a>
+        </li>
+        <li>
+          <a id="submenu-text" href="/content/style_guide#singletons">Singletons</a>
+        </li>
+
+        <li>
+          <a href="/content/coding_practices">Coding Practices</a>
+        </li>
+        <li>
+          <a id="submenu-text" href="/content/coding_practices">Overview</a>
+        </li>              
+        <li>
+          <a id="submenu-text" href="/content/coding_practices#init-and-dealloc">init and dealloc</a>
+        </li>
+        <li>
+          <a id="submenu-text" href="/content/coding_practices#class-layout">Class Layout</a>
+        </li>
+        <li>
+          <a id="submenu-text" href="/content/coding_practices#literals">Literals</a>
+        </li>
+        <li>
+          <a id="submenu-text" href="/content/coding_practices#cgrect-functions">CGRect Functions</a>
+        </li>
+        <li>
+          <a id="submenu-text" href="/content/coding_practices#constants">Constants</a>
+        </li>
+        <li>
+          <a id="submenu-text" href="/content/coding_practices#enumerated-types">Enumerated Types</a>
+        </li>
+        <li>
+          <a id="submenu-text" href="/content/coding_practices#private-properties">Private Properties</a>
+        </li>
+        <li>
+          <a id="submenu-text" href="/content/coding_practices#blocks">Blocks</a>
+        </li>
+        
+
+        <li>
+          <a href="/content/about">About</a>
+        </li>
+        <li>
+          <a id="submenu-text" href="/content/about/whatwedo">What We Do</a>
+        </li>
+        <li>
+          <a id="submenu-text" href="/content/about/team">Team</a>
+        </li>
+        <li>
+          <a id="submenu-text" href="/content/about/partnerships">Partnerships</a>
+        </li>
+        <li>
+          <a id="submenu-text" href="/content/about/press">Press</a>
+        </li>
+
+        <li>
+          <a href="/content/documentation">Documentation</a>
+        </li>
+        <li>
+          <a href="/content/xcode">Xcode</a>
+        </li>
+        <li>
+          <a href="/content/testing">Testing</a>
+        </li>
+        <li class="active">
+          <a href="/content/uncrustify">Uncrustify</a>
+        </li>
+        <li class="active">
+          <a href="https://github.com/invokelabs/objc.docs.invokernd.com" target="_blank">Source Code</a>
+        </li>
+        <div id="img-right-align">
+          <a href="https://www.facebook.com/InvokeLabs"><li id="img-inline" class="icon-facebook"></li></a>
+          <a href="https://twitter.com/InvokeLabs"><li id="img-inline" class="icon-twitter"></li></a>
+          <a href="http://instagram.com/invokelabs"><li id="img-inline" class="icon-linkedin"></li></a>
+          <a href="http://www.linkedin.com/company/invoke-labs"><li id="img-inline" class="icon-instagramm"></li></a>
+        </div>
+        <li id="contact-info">313-1 Alexander Street<br/>Vancouver, BC V6A 2E9<br/>604.689.3323<br/>info@invokelabs.com</li>
+      </ul>
+    </nav>
+
+  </header>
+</div>
+
+
+      <!-- Docs page layout -->
+      <div class="bs-header" id="content">
+        <div class="container" id="fade-in">
+          <h1>Uncrustify</h1>
+        </div>
+      </div>
+      
+      <div class="container-upper-body">
+        <div class="row">
+          <div class="body-content col-md-12" role="main">
+            <p>For quick reference, the uncrustify.cfg file that conforms to the Invoke Objective-C style guide is located <a href="http://objc.docs.invokernd.com/content/uncrustify/uncrustify.cfg">here</a>.</p>
+
+<h2>Overview</h2>
+
+<p>Uncrustify is a tool to reformat you code to a standard that you are able to define. Although it is not able to enforce standards for things like variable naming etc. It sorts out all the issues to do with white space, bracket placement, indenting etc. All in all, not a complete replacement for internalizing the style guide, but it gets someone who refuses to read the style guide a lot closer to readable code.</p>
+
+<h2>Installing Uncrustify</h2>
+
+<ol>
+<li>Clone the following project onto your local machine with the command <code>git clone git://github.com/bengardner/uncrustify.git</code></li>
+<li>Navigate into the project folder and run <code>./configure</code></li>
+<li>Then run <code>make</code> when that has completed.</li>
+<li>This will create, among other things, a file called <code>uncrustify.exe</code>. Move this file to <code>/usr/local/bin</code>.</li>
+<li>Test that you have set this up correctly by running <code>uncrustify -h</code>. If the help file loads you're golden ;)</li>
+</ol>
+
+
+<h2>Configuring Uncrustify</h2>
+
+<p>Uncrustify works with a config file that <em>you</em> will theoretically set up (most likely you'll just download one and tweak it a bit). This file has a whole bunch of options which you can specify the details for. Ultimately, it is these details that will be carried out when you execute the program on your file(s). This Config file can be set up in a text editor but that would be pretty rough. Fortunately, there is also a GUI you can use to assemble things which is a lot more reasonable. These instructions assume you will want to use the GUI.</p>
+
+<ol>
+<li>Download the <a href="http://sourceforge.net/projects/universalindent/files/uigui/">Universal Indent GUI</a> or the latest version of <a href="https://github.com/ryanmaxwell/UncrustifyX/releases">UncrustifyX</a> and install/run it. Both work principally the same but UncrustifyX is probably more attractive to the eye.</li>
+<li>In either case you are going to import a <a href="https://github.com/benoitsan/BBUncrustifyPlugin-Xcode/blob/master/Resources/uncrustify.cfg">sample config</a> file or generate a blank text doc with the name <code>uncrustify.cfg</code></li>
+<li>Down the left column are all of the things you can have Uncrustify control. They can be turned on and off at your bidding.</li>
+<li>With both editors you can also load a sample file with the <code>Live Indent Preview</code> option selected to visually understand the changes you're making to your code.</li>
+<li>When you are done you can export your <code>.config</code> file and note the location.</li>
+<li>Move this file to the top level of your xcode project folder as this is the first place that the plugin will look for your config specs. presumably you could include this file in your .gitignore file so that it is more of a local thing.</li>
+</ol>
+
+
+<h2>Using Uncrustify</h2>
+
+<p>With a config file specified to your needs and in the right place you can now run Uncrustify on your obj-c files with the following command: <code>uncrustify -c ~/.uncrustify/mystyle.cfg -f somefile.c &gt; somefile.c.unc</code> where the -c argument specifies the location of your config file and the -f argument specifies the input and output files that you are formatting.</p>
+
+<p>Presumably, you would use this approach if you wanted to plow a whole batch of files through this formatter prior to committing them. In that case you could probably automate this with some sort of script. My personal recommendation however, would be to follow the next set of instructions to incorporate Uncrustify right into Xcode and use it continually from the very beginning of your project.</p>
+
+<h2>The Xcode Uncrustify plugin</h2>
+
+<p>If you want to sort of run Uncrustify in a "hot" style it can be configured as a plug in for Xcode. Once installed there are various commands added to the <code>Edit</code> menu that let you exercise Uncrustify features.</p>
+
+<h3>To install the plugin:</h3>
+
+<ol>
+<li>Clone the following repo on your machine: <code>https://github.com/benoitsan/BBUncrustifyPlugin-Xcode</code></li>
+<li>Build the xcode <code>.project</code> file and run it.</li>
+<li>Assuming that it runs successfully, close and reopen xcode</li>
+<li>Open a file in your main view and select the <code>Edit</code> menu. at the bottom the Crustify features will be present. As a test you can select select <code>Uncrustify Active File</code> and you should see the specified formatting changes carried out.</li>
+<li>By default, there are no keyboard shortcuts for running these commands but think how bad@$$ it would be if you made them. . .</li>
+</ol>
+
+
+<p><em>Note:</em> If you first installed Uncrustify and then installed the plug in (as these instructions suggest) it is recommended that you switch the original build of Uncrustify instead of the build that comes packaged with the plugin. To do so, execute the following 3 commands</p>
+
+<pre><code>cd ~/Library/Application\ Support/Developer/Shared/Xcode/Plug-ins/UncrustifyPlugin.xcplugin/Contents/Resources  
+mv uncrustify uncrustify.orig  
+ln -s /usr/local/bin/uncrustify uncrustify  
+</code></pre>
+
+<h3>Limitations</h3>
+
+<p>As mentioned at the beginning, Uncrustify can not sort out things that go beyond actual formatting so you are still responsible for naming conventions, correctly constructed conditional switchs and the like. For reference, <a href="http://objc.docs.invokernd.com/content/uncrustify/uncrustify.cfg">here</a> is a config file that is as close as possible to the <a href="http://objc.docs.invokernd.com/content/uncrustify/uncrustify.cfg">Invoke Labs Objective-C</a> style guide as Uncrustify can force you to be.</p>
+
+<p>Additionally, below is a guide as to what this Uncrustify config will be formatting in your code to make it compile to the style guide and what is present in the style guide that this config file can not do.</p>
+
+<hr />
+
+<h4>Things in the style guide that Uncrustify can/will enforce:</h4>
+
+<h5>Spacing</h5>
+
+<ol>
+<li>The use of a tab equaling 4 spaces for an indent.</li>
+<li>All braces open on the declaration line but close on an independent line.</li>
+<li>There should be exactly one blank line between method closes and the next declaration.</li>
+</ol>
+
+
+<h5>Methods</h5>
+
+<ol>
+<li>Correct spacing in method signatures/declarations including:
+
+<ul>
+<li>spacing after the scope</li>
+<li>spacing between segments</li>
+<li>spacing between asterisks</li>
+<li>the lack of spacing in all the appropriate places</li>
+</ul>
+</li>
+</ol>
+
+
+<h5>Conditionals</h5>
+
+<ol>
+<li>Force the use of brackets for single conditionals.</li>
+</ol>
+
+
+<h5>Variables</h5>
+
+<ol>
+<li>Force pointer asterisks to belong to the variable not the Class.</li>
+</ol>
+
+
+<p><strong>Note:</strong> While it is not explicitly mentioned in the style guide, we have decided to place opening braces on a new line after the method definition yet before the body. This feature will be enforced in the config file.</p>
+
+<hr />
+
+<h4>Things in the style guide that Uncrustify won't/couldn't do:</h4>
+
+<h5>Dot-Notation:</h5>
+
+<ol>
+<li>Force the use of Dot-Notation for accessing and mutating properties.</li>
+<li>Force bracket notation for everything else.</li>
+</ol>
+
+
+<h5>Spacing:</h5>
+
+<ol>
+<li>Force the absence of whitespace within methods. (could do this, but there are times when it makes sense to have this).</li>
+<li><code>@synthesize</code> and <code>@dynamic</code> should be declared in new lines in the implementation.</li>
+</ol>
+
+
+<h5>Conditionals</h5>
+
+<ol>
+<li>Force the use of ternary Operators only to be used when they increase clarity.</li>
+</ol>
+
+
+<h5>Error Handling:</h5>
+
+<ol>
+<li>Force switching on the returned value as opposed to switching on the error itself.</li>
+</ol>
+
+
+<h5>Variables</h5>
+
+<ol>
+<li>Force the descriptive qualities of variable names.</li>
+<li>Force the use of direct variable access in <code>init</code> methods only.</li>
+</ol>
+
+
+<h5>Naming</h5>
+
+<ol>
+<li>Force descriptive variable and method names as well as naming conventions for constants.</li>
+<li>Camel casing.</li>
+</ol>
+
+
+<h5>Underscores</h5>
+
+<ol>
+<li>Force property access via <code>self.myProperty</code>.</li>
+</ol>
+
+
+<h5>Booleans</h5>
+
+<ol>
+<li>Stop the comparison of results to <code>nil</code>.</li>
+<li>Stop the comparison of results to <code>YES/NO</code>.</li>
+<li>Control the potential to drop the "is" in <code>BOOL</code> variable names.</li>
+</ol>
+
+
+<h5>Singletons</h5>
+
+<ol>
+<li>Force the use of thread safe singleton creation.</li>
+</ol>
+
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer
+================================================== -->
+<div class="scroll-top-arrow-desktop">
+	<img src="/assets/img/scrollup.gif">
+</div>
+<footer class="bs-footer" role="contentinfo">
+  <div class="top-footer">    
+    <div class="container" >
+      <h3 class="tagline-footer">LOOKING FORWARD TO MEETING YOU</h3>
+      <table class="table-footer">
+        <tbody>
+          <tr>
+            <!-- <td class="table-left-item-footer"><a target="_blank" href="#">EVENTS</a></td> -->
+            <td class="table-left-item-footer"><a target="_blank" href="/content/contact">CONTACT</a></td>
+            <td class="table-right-item-footer"><a target="_blank" href="https://www.facebook.com/InvokeLabs">FACEBOOK</a></td>
+          </tr>
+          <tr>
+            <!-- <td class="table-left-item-footer"><a target="_blank" href="/content/contact">CONTACT</a></td> -->
+            <td class="table-left-item-footer"><a target="_blank" href="http://www.invokemedia.com/">INVOKE MEDIA</a></td>
+            <td class="table-right-item-footer"><a target="_blank" href="https://twitter.com/InvokeLabs">TWITTER</a></td>
+          </tr>
+          <tr>
+            <!-- <td class="table-left-item-footer"><a target="_blank" href="http://www.invokemedia.com/">INVOKE MEDIA</a></td> -->
+            <td></td>
+            <td class="table-right-item-footer"><a target="_blank" href="http://instagram.com/invokelabs">INSTAGRAM</a></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="table-right-item-footer"><a target="_blank" href="http://www.linkedin.com/company/invoke-labs">LINKEDIN</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="scroll-top-arrow-mobile">
+	<img src="/assets/img/scrollup.gif">
+  </div>
+  <div class="bottom-footer">
+    <div class="container">
+      <p class="left-corner">2013 Invoke Labs</p>
+      <p class="right-corner">1.888.207.4106</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+
+<script src="/assets/js/jquery.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js" type="text/javascript"></script>
+<script src="/dist/js/bootstrap.js"></script>
+
+<!-- TYPE KIT FONTS -->
+<script type="text/javascript" src="//use.typekit.net/jjs4kmb.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+<script type="text/javascript" src="/assets/js/jquery.mmenu.js"></script>
+<!-- <script type="text/javascript" src="/assets/js/instafeed.js"></script> -->
+<script src="/assets/js/twitter-bootstrap-hover-dropdown.min.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function(){	
+		// Homepage hero animation
+		$('#fade-in').fadeIn(2500);
+
+		// Scroll to Top Button
+		$('.scroll-top-arrow-desktop').click(function(){
+            $("html, body").animate({ scrollTop: 0 }, 600);
+            return false;
+        });
+        $('.scroll-top-arrow-mobile').click(function(){
+            $("html, body").animate({ scrollTop: 0 }, 600);
+            return false;
+        });
+
+		// Mobile Slide Menu
+		$('nav#menu').mmenu();
+	});
+</script>
+
+<script type="text/javascript">
+	function unhideBody() {
+		var bodyElems = document.getElementsByTagName("body");
+		bodyElems[0].style.visibility = "visible";
+	}
+</script>
+
+<script src="http://platform.twitter.com/widgets.js"></script>
+<script src="/assets/js/holder.js"></script>
+
+<script src="/assets/js/application.js"></script>
+
+
+
+  </body>
+</html>
